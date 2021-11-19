@@ -1,0 +1,7 @@
+syntax = "proto3";
+package primary.connect;
+
+message Identifier {
+  string id = 1;
+  string id_type = 2;  // E.g. MRN, EPI, EHRI, NIST, NPI, Payor ID
+}

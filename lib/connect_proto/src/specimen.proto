@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+package primary.connect;
+
+message Specimen {
+  string id = 1; // ID of the collected specimen
+  // TODO: Should we use code/code_set for this?
+  string source = 2; // Source of the specimen
+  // TODO: Should we use code/code_set for this?
+  string body_site = 3; // Body site from which the specimen was collected
+}

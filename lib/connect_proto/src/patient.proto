@@ -1,0 +1,25 @@
+syntax = "proto3";
+package primary.connect;
+
+import "address.proto";
+import "demographics.proto";
+import "identifier.proto";
+import "name.proto";
+import "phone_number.proto";
+import "relationship.proto";
+
+message Patient {
+  message Contact {
+    Name name = 1;
+    Address address = 2;
+    repeated PhoneNumber phone_numbers = 3;
+    Relationship relation_to_patient = 4; // Personal relationship to the patient
+    repeated string email_addresses = 5;
+    repeated string roles = 6; // e.g. Employer, Emergency Contact
+  }
+
+  repeated Identifier identifiers = 1; // List of IDs and types that identify the patient
+  Demographics demographics = 2;
+  repeated string notes = 3; // Patient-level notes
+  repeated Contact contacts = 4;
+}

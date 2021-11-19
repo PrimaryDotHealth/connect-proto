@@ -1,0 +1,12 @@
+syntax = "proto3";
+package primary.connect;
+
+message Address {
+  string street_address_1 = 1;
+  string street_address_2 = 2;
+  string city = 3;
+  string state_code = 4;
+  string zip = 5;
+  string county = 6;
+  string country_code = 7;
+}

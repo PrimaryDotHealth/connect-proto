@@ -1,0 +1,8 @@
+syntax = "proto3";
+package primary.connect;
+
+message CodedValue {
+  string value = 1;
+  string code_set = 2;
+  string description = 3;
+}

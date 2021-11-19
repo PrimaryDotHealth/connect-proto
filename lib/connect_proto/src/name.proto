@@ -1,0 +1,8 @@
+syntax = "proto3";
+package primary.connect;
+
+message Name {
+  string first_name = 1;
+  string last_name = 2;
+  string middle_name = 3; // middle name or middle initial. For people with multiple middle names, all their middle names are included in this field.
+}

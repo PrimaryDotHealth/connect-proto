@@ -1,0 +1,108 @@
+syntax = "proto3";
+package primary.connect;
+
+import "google/protobuf/timestamp.proto";
+
+import "address.proto";
+import "coded_value.proto";
+import "identifier.proto";
+import "meta.proto";
+import "provider.proto";
+import "specimen.proto";
+
+message Results {
+  message Result {
+    enum ValueType {
+      ADDRESS = 0;
+      CODED_ENTRY = 1;
+      DATE = 2;
+      DATE_TIME = 3;
+      ENCAPSULATED_DATA = 4;
+      FORMATTED_TEXT = 5;
+      ID = 6;
+      ID_AND_NAME = 7;
+      MONEY = 8;
+      NAME = 9;
+      NUMERIC = 10;
+      PHONE_NUMBER = 11;
+      PRICE = 12;
+      REFERENCE_POINTER = 13;
+      STRING = 14;
+      TIME = 15;
+      STRUCTURED_NUMERIC = 16;
+    }
+
+    enum AbnormalFlag {
+      NORMAL = 0;
+      LOW = 1;
+      VERY_LOW = 2;
+      HIGH = 3;
+      VERY_HIGH = 4;
+      ABNORMAL = 5;
+      SUSCEPTIBLE = 6;
+      RESISTANT = 7;
+      INTERMEDIATE = 8;
+      MODERATELY_SUSCEPTIBLE = 9;
+      VERY_SUSCEPTIBLE = 10;
+      CRITICALLY_ABNORMAL = 11;
+      CRITICALLY_LOW = 12;
+      CRITICALLY_HIGH = 13;
+      NOT_SUSCEPTIBLE = 14;
+      INCONCLUSIVE = 15;
+      VERY_ABNORMAL = 16;
+    }
+
+    enum Status {
+      PRELIMINARY = 0;
+      INCOMPLETE = 1;
+      CORRECTED = 2;
+      FINAL = 3;
+      UNAVAILABLE = 4;
+      NONE_SPECIFIED = 5;
+      CANCELED = 6;
+      DELETED = 7;
+      REJECTED = 8;
+    }
+
+    message Producer {
+      Identifier id = 1;
+      string name = 2;
+      Address address = 3;
+    }
+
+    message Range {
+      // Numeric result values will use the low and high properties.
+      // Non-numeric result values will put the normal value in the text property.
+      int32 low = 1; // Lower bound for a normal result
+      int32 high = 2; // Upper bound for a normal result
+      string text = 3; // Normal value for non-numeric results
+    }
+
+    message Report {
+      string file_type = 1;
+      string data = 2; // Ideally, Base64 encoded report
+    }
+
+    CodedValue code = 1; // Code for the result component
+    repeated string related_group_id = 2; // ID to group separate result components
+    Specimen specimen = 3;
+    string value = 4; // Value of the result component. If value_type is ValueType.ENCAPSULATED_DATA this field includes the BLOB URI
+    ValueType value_type = 5; // Data type for the result value
+    google.protobuf.Timestamp completion_date_time = 6; // Timestamp at which the individual results were composed into a report and released
+    Report report = 7;
+    string units = 8; // Units of the result
+    repeated string notes = 9; // Notes about the result component/observation
+    AbnormalFlag abnormal_flag = 10; // Indication of whether the result was abnormal
+    Status status = 12; // Current status of the result
+    Provider primary_results_interpreter = 13;
+    Producer producer = 14; // typically the Lab which did the resulting
+    Provider performer = 15; // person that performed the resulting
+    Range reference_range = 16; // Reference range for the result.
+    CodedValue observation_method = 17; // Method used to obtain the observation. This field is used when an observation may be obtained by different methods and the sending system wishes to indicate which method was used.
+    string producer_order_id = 18;
+    CodedValue finding_value = 19; // Normalized value
+  }
+
+  Meta meta = 1;
+  repeated Result results = 2; // List of result components and their values
+}

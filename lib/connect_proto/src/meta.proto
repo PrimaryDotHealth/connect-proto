@@ -1,0 +1,43 @@
+
+syntax = "proto3";
+package primary.connect;
+
+import "google/protobuf/timestamp.proto";
+
+message Meta {
+  enum EventType {
+    EVENT_TYPE_NEW = 0;
+    EVENT_TYPE_NEW_UNSOLICITED = 1;
+    EVENT_TYPE_UPDATE = 2;
+    EVENT_TYPE_CANCEL = 3;
+    EVENT_TYPE_QUERY = 4;
+  }
+
+  message Source {
+    string id = 1;
+    string name = 2;
+  }
+
+  message Message {
+    string id = 1;
+    string order_id = 2;
+  }
+
+  message Transmission {
+    string id = 1;
+  }
+
+  message Destination {
+    string id = 1;
+    string name = 2;
+  }
+
+  EventType event_type = 1;
+  google.protobuf.Timestamp event_date_and_time = 2;
+  bool test = 3;
+  Source source = 4;
+  repeated Destination destinations = 5;
+  Message message = 6;
+  Transmission transmission = 7;
+  string facility_code = 8;
+}

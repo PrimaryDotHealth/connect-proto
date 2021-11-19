@@ -1,0 +1,105 @@
+syntax = "proto3";
+package primary.connect;
+
+import "google/protobuf/timestamp.proto";
+
+import "address.proto";
+import "coded_value.proto";
+import "meta.proto";
+import "patient.proto";
+import "phone_number.proto";
+import "provider.proto";
+import "specimen.proto";
+import "visit.proto";
+
+message Order {
+  message Order {
+    message Facility {
+      string name = 1;
+      Address address = 2;
+      repeated PhoneNumber phone_numbers = 3;
+    }
+
+    message Diagnosis {
+      enum Type {
+        TYPE_UNKNOWN	 = 0;
+        TYPE_ADMITTING = 1;
+        TYPE_FINAL = 2;
+        TYPE_SELF = 3;
+        TYPE_WORKING = 4;
+        TYPE_PRINCIPAL = 5;
+      }
+
+      CodedValue code = 1; // Code for the diagnosis
+      Type type = 2; // Type of the diagnosis
+      google.protobuf.Timestamp documented_date_time = 3; // Timestamp of the the diagnosis was documented
+    }
+
+    message ClinicalInfo {
+      CodedValue code = 1;
+      string value = 2; // Value of the information element.  For AOEs, this is typically the full answer
+      string units = 3; // Units of the value.  If the Value is a time range, this may be "WK"
+      string abbreviation = 4; // Abbreviation of the value of the information element.  Typically only present for text answer AOEs
+      repeated string notes = 5; // Notes related to the clinical info
+    }
+
+    enum Status {
+      STATUS_NEW = 0;
+      STATUS_UPDATE = 1;
+      STATUS_CANCEL = 2;
+      STATUS_RESULTED = 3;
+    }
+
+    enum Priority {
+      PRIORITY_STAT = 0;
+      PRIORITY_ASAP = 1;
+      PRIORITY_ROUTINE = 2;
+      PRIORITY_PREOPERATIVE = 3;
+      PRIORITY_TIMING_CRITICAL = 4;
+    }
+
+    enum ResultStatus {
+      UNAVAILABLE = 0;
+      PRELIMINARY = 1;
+      IN_PROCESS = 2;
+      CORRECTED = 3;
+      CANCELED = 4;
+      FINAL = 5;
+    }
+
+    enum ResponseFlag {
+      /* Increasing specificity, values incorporate previous options */
+      /* HL7 Table 0121 */
+      ACKNOWLEDGEMENT = 0;
+      EXCEPTIONS = 1;
+      REPLACEMENTS = 2;
+      ASSOCIATED_SEGMENTS = 3;
+      CONFIRMATIONS = 4;
+    }
+
+    string id = 1; // ID of the order assigned by the placing system
+    string application_order_id = 2; // ID assigned by the application fulfilling the order
+    Status status = 3; // The status of an order.
+    google.protobuf.Timestamp transaction_date_time = 4; // Timestamp when the order was placed
+    google.protobuf.Timestamp collection_date_time = 5; // Timestamp when the specimen was collected
+    google.protobuf.Timestamp completion_date_time = 6; // Timestamp when the results were composed into a report and released.
+    string expiration_date = 7; // YYYY-MM-DD, Date when the order becomes invalid
+    Specimen specimen = 8;
+    CodedValue procedure = 9; // Procedure that was ordered
+    Provider ordering_provider = 10;
+    repeated Provider result_copy_providers = 11; // Array of providers to be copied on the results
+    Facility ordering_facility = 12; // Facility this order was placed in
+    Priority priority = 13; // Priority of the order
+    repeated Diagnosis diagnoses = 14; // List of diagnoses associated with this order
+    string clinical_comments = 15; // Clinically relevant comments regarding the order
+    repeated string notes = 16; // Order-level notes
+    repeated ClinicalInfo clinical_info = 17; // List of supplementary clinical information associated with the order. Often these are answers to Ask at Order Entry (AOE) questions.
+    ResultStatus results_status = 18; // Current overall status of the order
+    ResponseFlag response_flag = 19; // Specificity of the response requested from the receiving system
+  }
+
+  Meta meta = 1;
+  Patient patient = 2;
+  Visit visit = 3;
+  Order order = 4;
+}

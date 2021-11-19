@@ -1,0 +1,19 @@
+syntax = "proto3";
+package primary.connect;
+
+import "address.proto";
+import "identifier.proto";
+import "location.proto";
+import "name.proto";
+import "phone_number.proto";
+
+message Provider {
+  Identifier identifier = 1;
+  string npi = 2;
+  Name name = 3;
+  repeated string credentials = 4; // List of credentials for the provider.  e.g. MD, PhD
+  Address address = 5;
+  repeated string email_addresses = 6;
+  repeated PhoneNumber phone_numbers = 7;
+  Location location = 8;
+}

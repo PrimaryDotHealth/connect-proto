@@ -1,0 +1,10 @@
+syntax = "proto3";
+package primary.connect;
+
+message Location {
+  string type = 1; // E.g. Clinic, Department, Home, Nursing Unit, Provider's Office, Phone
+  string facility = 2; // E.g. Community Hospital
+  string department = 3;
+  string room = 4; // E.g. 136
+  string bed = 5; // E.g B
+}

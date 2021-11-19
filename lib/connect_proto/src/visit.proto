@@ -1,0 +1,105 @@
+syntax = "proto3";
+package primary.connect;
+
+import "google/protobuf/timestamp.proto";
+
+import "address.proto";
+import "demographics.proto";
+import "identifier.proto";
+import "location.proto";
+import "name.proto";
+import "phone_number.proto";
+import "provider.proto";
+import "relationship.proto";
+
+message Visit {
+  message Guarantor {
+    message Employer {
+      string name = 1;
+      repeated PhoneNumber phone_numbers = 2;
+      Address address = 3;
+    }
+
+    string number = 1; // Number of the guarantor (?)
+    Name name = 2;
+    string ssn = 3;
+    string dob = 4; // YYYY-MM-DD
+    Demographics.Sex sex = 5;
+    Name spouse = 6;
+    Address address = 7;
+    repeated PhoneNumber phone_numbers = 8;
+    repeated string email_addresses = 9;
+    string type = 10;
+    string relation_to_patient = 11;
+    Employer employer = 12;
+  }
+
+  message Insurance {
+    message Plan {
+      Identifier identifier = 1; // Identifier of insurance plan
+      string name = 2; // Name of insurance plan
+      string type = 3; // Type of insurance plan
+    }
+
+    message Company {
+      Identifier identifier = 1;
+      string name = 2;
+      Address address = 3;
+      repeated PhoneNumber phone_numbers = 4;
+    }
+
+    message Insured {
+      repeated Identifier identifiers = 1;
+      Name name = 2;
+      string ssn = 3;
+      Relationship relationship = 4;
+      string dob = 5;
+      Demographics.Sex sex = 6;
+      /* TODO: Gender? */
+      Address address = 7;
+    }
+
+    enum Priority {
+      PRIORITY_PRIMARY = 0;
+      PRIORITY_SECONDARY = 1;
+      PRIORITY_TERTIARY = 2;
+    }
+
+    enum AgreementType {
+      AGREEMENT_TYPE_STANDARD = 0;
+      AGREEMENT_TYPE_UNIFIED = 1;
+      AGREEMENT_TYPE_MATERNITY = 2;
+    }
+
+    enum CoverageType {
+      COVERAGE_TYPE_PATIENT	= 0;
+      COVERAGE_TYPE_CLINIC = 1;
+      COVERAGE_TYPE_INSURANCE = 2;
+      COVERAGE_TYPE_OTHER = 3;
+    }
+
+    Plan plan = 1;
+    repeated string member_number = 2; // Patient member number
+    Company company = 3; // Insurance company (payor)
+    string group_number = 4; // Insurance policy group number
+    string group_name = 5; // Insurance policy group name
+    string effective_date = 6; // YYYY-MM-DD, Effect date of this insurance policy
+    string expiration_date = 7; // YYYY-MM-DD, Expiration date of this insurance policy
+    string policy_number = 8; // Insurance policy number
+    Priority priority = 9; // The insurance priority sequence
+    AgreementType agreement_type = 10; // Type of insurance agreement
+    CoverageType coverage_type = 11; // Type of insurance Agreement
+    Insured insured = 12; // Individual who has the agreement with the insurance company for the related policy
+  }
+
+  string visit_number = 1; // Unique ID of a single visit
+  string account_number = 2; // An ID that can span several visits often related to the same issue - pregnancy, surgeries, research study, etc.
+  string patient_class = 3; // Patient class is used in many EHRs to determine where to put the patient. E.g. Inpatient, Outpatient, Emergency
+  google.protobuf.Timestamp visit_date_time = 4; // Timestamp of visit or the arrival time of the visit or admission.
+  Provider attending_provider = 5;
+  Provider consulting_provider = 6;
+  Provider referring_provider = 7;
+  Guarantor guarantor = 8; // Person ultimately responsible for the bill of the appointment
+  repeated Insurance insurances = 9; // List of insurance coverages for the patient
+  Location location = 10; // Location of the appointment
+}
