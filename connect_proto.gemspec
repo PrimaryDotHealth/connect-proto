@@ -3,12 +3,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "connect_proto"
-  s.version     = "0.0.0"
+  s.name        = "primary_connect_proto"
+  s.version     = "0.0.3"
   s.authors     = ["Primary.Health"]
   s.platform    = Gem::Platform::RUBY
   s.homepage    = "https://github.com/PrimaryDotHealth/connect-proto"
-  s.summary     = "Connect Protobuf"
+  s.summary     = "Primary Connect Protobuf"
   s.description = "Protobufs for Diagnostic Ordering and Resulting"
   s.license     = "Unlicense"
   s.required_ruby_version = ">= 2.4"
