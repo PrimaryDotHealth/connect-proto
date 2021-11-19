@@ -18,4 +18,21 @@ require 'results_pb'
 require 'specimen_pb'
 require 'visit_pb'
 
+$LOAD_PATH << './lib/extensions'
+
+require 'full_nameable'
+require 'phone_numberable'
+
+Primary::Connect::Name.include(ConnectProto::Extensions::FullNameable)
+[
+  Primary::Connect::Provider,
+  Primary::Connect::Demographics,
+  Primary::Connect::Order::Order::Facility,
+  Primary::Connect::Patient::Contact,
+  Primary::Connect::Visit::Guarantor,
+  Primary::Connect::Visit::Guarantor::Employer
+].each do |protobuf|
+  protobuf.include(ConnectProto::Extensions::PhoneNumberable)
+end
+
 module ConnectProto; end

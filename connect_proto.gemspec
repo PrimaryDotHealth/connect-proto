@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license     = "Unlicense"
   s.required_ruby_version = ">= 2.4"
   s.files       = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
-  s.require_paths = ["lib", "lib/connect_proto/build"]
+  s.require_paths = ["lib", "lib/connect_proto/build", "lib/extensions"]
   s.executables = []
 
   s.add_runtime_dependency 'google-protobuf', '~> 4.0.0.rc1'
