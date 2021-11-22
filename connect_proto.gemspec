@@ -1,11 +1,14 @@
 # -*- encoding: utf-8 -*
 
-$:.push File.expand_path("../lib", __FILE__)
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "primary_connect_proto"
-  s.version     = "0.0.3"
+  s.version     = "0.0.5"
   s.authors     = ["Primary.Health"]
+  s.email       = ["sam@primary.health"]
+
   s.platform    = Gem::Platform::RUBY
   s.homepage    = "https://github.com/PrimaryDotHealth/connect-proto"
   s.summary     = "Primary Connect Protobuf"
@@ -18,5 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'google-protobuf', '~> 4.0.0.rc1'
 
+  s.add_development_dependency "bundler", "~> 1.17"
+  s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    primary_connect_proto (0.0.3)
+    primary_connect_proto (0.0.5)
       google-protobuf (~> 4.0.0.rc1)
 
 GEM
@@ -54,6 +54,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (~> 1.17)
   primary_connect_proto!
   pry-byebug
   rake (~> 13.0.1)

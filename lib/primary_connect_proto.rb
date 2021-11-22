@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-$LOAD_PATH << './lib/connect_proto/build'
-
 require 'address_pb'
 require 'coded_value_pb'
 require 'demographics_pb'
@@ -17,8 +15,6 @@ require 'relationship_pb'
 require 'results_pb'
 require 'specimen_pb'
 require 'visit_pb'
-
-$LOAD_PATH << './lib/extensions'
 
 require 'full_nameable'
 require 'phone_numberable'
