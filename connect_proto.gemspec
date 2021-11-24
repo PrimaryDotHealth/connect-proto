@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "primary_connect_proto"
-  s.version     = "0.0.6"
+  s.version     = "0.0.7"
   s.authors     = ["Primary.Health"]
   s.email       = ["sam@primary.health"]
 
