@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "primary_connect_proto"
-  s.version     = "0.0.7"
+  s.version     = "0.0.8"
   s.authors     = ["Primary.Health"]
   s.email       = ["sam@primary.health"]
 
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "lib/connect_proto/build", "lib/extensions"]
   s.executables = []
 
-  s.add_runtime_dependency 'google-protobuf', '~> 4.0.0.rc1'
+  s.add_runtime_dependency 'google-protobuf', '= 4.0.0.rc1'
 
   s.add_development_dependency "bundler", "~> 1.17"
   s.add_development_dependency "rake", "~> 10.0"
