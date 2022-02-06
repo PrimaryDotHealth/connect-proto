@@ -6,6 +6,7 @@ require 'google/protobuf'
 require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'coded_value_pb'
+require 'identifier_pb'
 require 'meta_pb'
 require 'patient_pb'
 require 'phone_number_pb'
@@ -40,6 +41,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :clinical_info, :message, 17, "primary.connect.Order.Order.ClinicalInfo"
       optional :results_status, :enum, 18, "primary.connect.Order.Order.ResultStatus"
       optional :response_flag, :enum, 19, "primary.connect.Order.Order.ResponseFlag"
+      repeated :external_ids, :message, 20, "primary.connect.Identifier"
     end
     add_message "primary.connect.Order.Order.Facility" do
       optional :name, :string, 1
