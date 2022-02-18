@@ -10,6 +10,7 @@ require 'identifier_pb'
 require 'meta_pb'
 require 'provider_pb'
 require 'specimen_pb'
+
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("results.proto", :syntax => :proto3) do
     add_message "primary.connect.Results" do
