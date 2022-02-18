@@ -13,6 +13,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :zip, :string, 5
       optional :county, :string, 6
       optional :country_code, :string, 7
+      optional :time_zone, :string, 8
     end
   end
 end
