@@ -9,4 +9,5 @@ message Address {
   string zip = 5;
   string county = 6;
   string country_code = 7;
+  string time_zone = 8;
 }
