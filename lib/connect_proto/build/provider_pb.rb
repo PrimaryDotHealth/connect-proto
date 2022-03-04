@@ -8,7 +8,6 @@ require 'identifier_pb'
 require 'location_pb'
 require 'name_pb'
 require 'phone_number_pb'
-
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("provider.proto", :syntax => :proto3) do
     add_message "primary.connect.Provider" do
