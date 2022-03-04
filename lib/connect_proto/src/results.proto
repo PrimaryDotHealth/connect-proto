@@ -81,6 +81,7 @@ message Results {
     message Report {
       string file_type = 1;
       string data = 2; // Ideally, Base64 encoded report
+      string url = 3;
     }
 
     CodedValue code = 1; // Code for the result component

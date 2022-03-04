@@ -7,7 +7,6 @@ require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'name_pb'
 require 'phone_number_pb'
-
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("demographics.proto", :syntax => :proto3) do
     add_message "primary.connect.Demographics" do
