@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.1
+
+- Use `Value` instead of `Any`
+
 ## 0.7.0
 
 - Added `echo` to `Meta`
