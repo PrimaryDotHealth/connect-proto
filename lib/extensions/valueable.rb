@@ -3,11 +3,11 @@
 module ConnectProto
   module Extensions
     module Valueable
-      def self.typeify(value)
+      def self.to_value(value)
         case value
-        when String then { string_value: value }
-        when Numeric then { number_value: value }
-        when NilClass then nil
+        when String then Google::Protobuf::Value.new(string_value: value)
+        when Numeric then Google::Protobuf::Value.new(number_value: value)
+        when NilClass then Google::Protobuf::Value.new(null_value: :NULL_VALUE)
         else
           raise TypeError, "Invalid type #{value.class} for value #{value}"
         end
