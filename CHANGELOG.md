@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.3
+
+- Add require in gemspec
+
 ## 0.7.2
 
 - Add `Typeable` extension
