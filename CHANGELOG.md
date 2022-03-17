@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.2
+
+- Add `Typeable` extension
+
 ## 0.7.1
 
 - Use `Value` instead of `Any`
