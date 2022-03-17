@@ -2,8 +2,8 @@
 
 module ConnectProto
   module Extensions
-    module Typeable
-      def typeify(value)
+    module Valueable
+      def self.typeify(value)
         case value
         when String then { string_value: value }
         when Numeric then { number_value: value }
