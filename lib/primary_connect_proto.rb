@@ -18,6 +18,7 @@ require 'visit_pb'
 
 require 'full_nameable'
 require 'phone_numberable'
+require 'valueable'
 
 Primary::Connect::Name.include(ConnectProto::Extensions::FullNameable)
 [
