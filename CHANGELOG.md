@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.8.0
+
+- Add `repeated Results.Result` to `Order.Order`
+
 ## 0.7.3
 
 - Add require in gemspec

@@ -10,6 +10,7 @@ import "meta.proto";
 import "patient.proto";
 import "phone_number.proto";
 import "provider.proto";
+import "results.proto";
 import "specimen.proto";
 import "visit.proto";
 
@@ -98,6 +99,7 @@ message Order {
     ResultStatus results_status = 18; // Current overall status of the order
     ResponseFlag response_flag = 19; // Specificity of the response requested from the receiving system
     repeated Identifier external_ids = 20; // May contain any number of ids related to this order
+    repeated Results.Result results = 21; // If this order already has a result, add the result here
   }
 
   Meta meta = 1;

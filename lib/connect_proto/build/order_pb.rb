@@ -11,6 +11,7 @@ require 'meta_pb'
 require 'patient_pb'
 require 'phone_number_pb'
 require 'provider_pb'
+require 'results_pb'
 require 'specimen_pb'
 require 'visit_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
@@ -42,6 +43,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :results_status, :enum, 18, "primary.connect.Order.Order.ResultStatus"
       optional :response_flag, :enum, 19, "primary.connect.Order.Order.ResponseFlag"
       repeated :external_ids, :message, 20, "primary.connect.Identifier"
+      repeated :results, :message, 21, "primary.connect.Results.Result"
     end
     add_message "primary.connect.Order.Order.Facility" do
       optional :name, :string, 1
