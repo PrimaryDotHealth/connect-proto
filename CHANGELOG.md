@@ -2,7 +2,8 @@
 
 ## 0.8.0
 
-- Add `repeated Results.Result` to `Order.Order`
+- Pull `Result` out of `Results`
+- Add `repeated Result` to `Order.Order`
 
 ## 0.7.3
 

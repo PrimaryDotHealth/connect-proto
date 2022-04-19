@@ -1,5 +1,10 @@
 # connect-proto
 
+## Testing
+
+- `irb -I lib -I lib/connect_proto/build -I lib/extensions`
+- `require './lib/primary_connect_proto'`
+
 ## Compile
 
 - `brew install protobuf`
