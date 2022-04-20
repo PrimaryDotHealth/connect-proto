@@ -80,20 +80,23 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :address, :message, 7, "primary.connect.Address"
     end
     add_enum "primary.connect.Visit.Insurance.Priority" do
-      value :PRIORITY_PRIMARY, 0
-      value :PRIORITY_SECONDARY, 1
-      value :PRIORITY_TERTIARY, 2
+      value :PRIORITY_UNKNOWN, 0
+      value :PRIORITY_PRIMARY, 1
+      value :PRIORITY_SECONDARY, 2
+      value :PRIORITY_TERTIARY, 3
     end
     add_enum "primary.connect.Visit.Insurance.AgreementType" do
-      value :AGREEMENT_TYPE_STANDARD, 0
-      value :AGREEMENT_TYPE_UNIFIED, 1
-      value :AGREEMENT_TYPE_MATERNITY, 2
+      value :AGREEMENT_TYPE_UNKNOWN, 0
+      value :AGREEMENT_TYPE_STANDARD, 1
+      value :AGREEMENT_TYPE_UNIFIED, 2
+      value :AGREEMENT_TYPE_MATERNITY, 3
     end
     add_enum "primary.connect.Visit.Insurance.CoverageType" do
-      value :COVERAGE_TYPE_PATIENT, 0
-      value :COVERAGE_TYPE_CLINIC, 1
-      value :COVERAGE_TYPE_INSURANCE, 2
-      value :COVERAGE_TYPE_OTHER, 3
+      value :COVERAGE_TYPE_UNKNOWN, 0
+      value :COVERAGE_TYPE_PATIENT, 1
+      value :COVERAGE_TYPE_CLINIC, 2
+      value :COVERAGE_TYPE_INSURANCE, 3
+      value :COVERAGE_TYPE_OTHER, 4
     end
   end
 end

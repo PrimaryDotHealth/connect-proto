@@ -7,11 +7,12 @@ import "google/protobuf/timestamp.proto";
 
 message Meta {
   enum EventType {
-    EVENT_TYPE_NEW = 0;
+    EVENT_TYPE_UNKNOWN = 0;
     EVENT_TYPE_NEW_UNSOLICITED = 1;
     EVENT_TYPE_UPDATE = 2;
     EVENT_TYPE_CANCEL = 3;
     EVENT_TYPE_QUERY = 4;
+    EVENT_TYPE_NEW = 5;
   }
 
   message Source {

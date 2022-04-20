@@ -10,10 +10,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :number, :string, 2
     end
     add_enum "primary.connect.PhoneNumber.Type" do
-      value :HOME, 0
+      value :UNKNOWN, 0
       value :OFFICE, 1
       value :MOBILE, 2
       value :FAX, 3
+      value :HOME, 4
     end
   end
 end

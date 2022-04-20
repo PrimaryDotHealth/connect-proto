@@ -35,11 +35,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       map :config, :string, :message, 3, "google.protobuf.Value"
     end
     add_enum "primary.connect.Meta.EventType" do
-      value :EVENT_TYPE_NEW, 0
+      value :EVENT_TYPE_UNKNOWN, 0
       value :EVENT_TYPE_NEW_UNSOLICITED, 1
       value :EVENT_TYPE_UPDATE, 2
       value :EVENT_TYPE_CANCEL, 3
       value :EVENT_TYPE_QUERY, 4
+      value :EVENT_TYPE_NEW, 5
     end
   end
 end

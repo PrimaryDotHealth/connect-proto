@@ -3,10 +3,11 @@ package primary.connect;
 
 message PhoneNumber {
   enum Type {
-    HOME = 0;
+    UNKNOWN = 0;
     OFFICE = 1;
     MOBILE = 2;
     FAX = 3;
+    HOME = 4;
   }
   Type type = 1;
   string number = 2; /* E.164 */
