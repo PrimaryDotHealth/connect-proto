@@ -6,9 +6,9 @@ require 'google/protobuf'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("relationship.proto", :syntax => :proto3) do
     add_enum "primary.connect.Relationship" do
-      value :RELATIONSHIP_SELF, 0
+      value :RELATIONSHIP_UNKNOWN, 0
       value :RELATIONSHIP_OTHER, 1
-      value :RELATIONSHIP_UNKNOWN, 2
+      value :RELATIONSHIP_SELF, 2
       value :RELATIONSHIP_SPOUSE, 3
       value :RELATIONSHIP_LIFE_PARTNER, 4
       value :RELATIONSHIP_CHILD, 5

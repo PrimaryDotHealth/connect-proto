@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.9.0
+
+- Update enums at index 0 to be an `unknown` type value
+
+## 0.8.2
+
+- This change applies to version 0.8.1 as well
+- Force google-protobuf:4.0.0.rc.1 in Gemfile.lock
+
 ## 0.8.0
 
 - Pull `Result` out of `Results`

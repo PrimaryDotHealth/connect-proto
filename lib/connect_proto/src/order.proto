@@ -46,18 +46,20 @@ message Order {
     }
 
     enum Status {
-      STATUS_NEW = 0;
+      STATUS_UNKNOWN = 0;
       STATUS_UPDATE = 1;
       STATUS_CANCEL = 2;
       STATUS_RESULTED = 3;
+      STATUS_NEW = 4;
     }
 
     enum Priority {
-      PRIORITY_STAT = 0;
+      PRIORITY_UNKNOWN = 0;
       PRIORITY_ASAP = 1;
       PRIORITY_ROUTINE = 2;
       PRIORITY_PREOPERATIVE = 3;
       PRIORITY_TIMING_CRITICAL = 4;
+      PRIORITY_STAT = 5;
     }
 
     enum ResultStatus {
@@ -72,11 +74,12 @@ message Order {
     enum ResponseFlag {
       /* Increasing specificity, values incorporate previous options */
       /* HL7 Table 0121 */
-      ACKNOWLEDGEMENT = 0;
+      UNKNOWN = 0;
       EXCEPTIONS = 1;
       REPLACEMENTS = 2;
       ASSOCIATED_SEGMENTS = 3;
       CONFIRMATIONS = 4;
+      ACKNOWLEDGEMENT = 5;
     }
 
     string id = 1; // ID of the order assigned by the placing system

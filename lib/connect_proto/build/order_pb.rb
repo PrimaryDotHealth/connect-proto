@@ -71,17 +71,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :notes, :string, 5
     end
     add_enum "primary.connect.Order.Order.Status" do
-      value :STATUS_NEW, 0
+      value :STATUS_UNKNOWN, 0
       value :STATUS_UPDATE, 1
       value :STATUS_CANCEL, 2
       value :STATUS_RESULTED, 3
+      value :STATUS_NEW, 4
     end
     add_enum "primary.connect.Order.Order.Priority" do
-      value :PRIORITY_STAT, 0
+      value :PRIORITY_UNKNOWN, 0
       value :PRIORITY_ASAP, 1
       value :PRIORITY_ROUTINE, 2
       value :PRIORITY_PREOPERATIVE, 3
       value :PRIORITY_TIMING_CRITICAL, 4
+      value :PRIORITY_STAT, 5
     end
     add_enum "primary.connect.Order.Order.ResultStatus" do
       value :UNAVAILABLE, 0
@@ -92,11 +94,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :FINAL, 5
     end
     add_enum "primary.connect.Order.Order.ResponseFlag" do
-      value :ACKNOWLEDGEMENT, 0
+      value :UNKNOWN, 0
       value :EXCEPTIONS, 1
       value :REPLACEMENTS, 2
       value :ASSOCIATED_SEGMENTS, 3
       value :CONFIRMATIONS, 4
+      value :ACKNOWLEDGEMENT, 5
     end
   end
 end

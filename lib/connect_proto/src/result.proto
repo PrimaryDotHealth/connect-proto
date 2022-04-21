@@ -11,7 +11,7 @@ import "specimen.proto";
 
 message Result {
   enum ValueType {
-    ADDRESS = 0;
+    UNKNOWN = 0;
     CODED_ENTRY = 1;
     DATE = 2;
     DATE_TIME = 3;
@@ -28,10 +28,11 @@ message Result {
     STRING = 14;
     TIME = 15;
     STRUCTURED_NUMERIC = 16;
+    ADDRESS = 17;
   }
 
   enum AbnormalFlag {
-    NORMAL = 0;
+    NONE = 0;
     LOW = 1;
     VERY_LOW = 2;
     HIGH = 3;
@@ -48,15 +49,16 @@ message Result {
     NOT_SUSCEPTIBLE = 14;
     INCONCLUSIVE = 15;
     VERY_ABNORMAL = 16;
+    NORMAL = 17;
   }
 
   enum Status {
-    PRELIMINARY = 0;
+    NONE_SPECIFIED = 0;
     INCOMPLETE = 1;
     CORRECTED = 2;
     FINAL = 3;
     UNAVAILABLE = 4;
-    NONE_SPECIFIED = 5;
+    PRELIMINARY = 5;
     CANCELED = 6;
     DELETED = 7;
     REJECTED = 8;

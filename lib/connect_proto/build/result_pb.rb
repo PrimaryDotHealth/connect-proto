@@ -47,7 +47,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :url, :string, 3
     end
     add_enum "primary.connect.Result.ValueType" do
-      value :ADDRESS, 0
+      value :UNKNOWN, 0
       value :CODED_ENTRY, 1
       value :DATE, 2
       value :DATE_TIME, 3
@@ -64,9 +64,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :STRING, 14
       value :TIME, 15
       value :STRUCTURED_NUMERIC, 16
+      value :ADDRESS, 17
     end
     add_enum "primary.connect.Result.AbnormalFlag" do
-      value :NORMAL, 0
+      value :NONE, 0
       value :LOW, 1
       value :VERY_LOW, 2
       value :HIGH, 3
@@ -83,14 +84,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :NOT_SUSCEPTIBLE, 14
       value :INCONCLUSIVE, 15
       value :VERY_ABNORMAL, 16
+      value :NORMAL, 17
     end
     add_enum "primary.connect.Result.Status" do
-      value :PRELIMINARY, 0
+      value :NONE_SPECIFIED, 0
       value :INCOMPLETE, 1
       value :CORRECTED, 2
       value :FINAL, 3
       value :UNAVAILABLE, 4
-      value :NONE_SPECIFIED, 5
+      value :PRELIMINARY, 5
       value :CANCELED, 6
       value :DELETED, 7
       value :REJECTED, 8
