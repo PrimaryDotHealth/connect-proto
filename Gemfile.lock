@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    primary_connect_proto (0.0.5)
-      google-protobuf (~> 4.0.0.rc1)
+    primary_connect_proto (0.8.0)
+      google-protobuf (= 4.0.0.rc1)
 
 GEM
   remote: https://rubygems.org/
@@ -11,7 +11,7 @@ GEM
     byebug (11.1.3)
     coderay (1.1.3)
     diff-lcs (1.4.4)
-    google-protobuf (4.0.0.rc.2-universal-darwin)
+    google-protobuf (4.0.0.rc.1)
     jaro_winkler (1.5.4)
     method_source (1.0.0)
     parallel (1.21.0)
@@ -54,7 +54,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.17)
+  bundler (~> 2.2.10)
   primary_connect_proto!
   pry-byebug
   rake (~> 13.0.1)
@@ -62,4 +62,4 @@ DEPENDENCIES
   rubocop (~> 0.66.0)
 
 BUNDLED WITH
-   1.17.2
+   2.2.26

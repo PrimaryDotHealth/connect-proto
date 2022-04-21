@@ -20,7 +20,7 @@
 - Build gem
 
   ```
-  gem build connect_proto.gemspec`
+  gem build connect_proto.gemspec
   ```
 
 - Publish gem
@@ -32,7 +32,7 @@
 - Cleanup
 
   ```
-  rm primary_connect_proto-X.X.X.gem`
+  rm primary_connect_proto-X.X.X.gem
   ```
 
 - Bump version in dependent projects (client, integration testing, connect, health)
