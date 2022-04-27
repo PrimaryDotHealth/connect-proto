@@ -14,6 +14,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :county, :string, 6
       optional :country_code, :string, 7
       optional :time_zone, :string, 8
+      optional :address_type, :enum, 9, "primary.connect.Address.AddressType"
+    end
+    add_enum "primary.connect.Address.AddressType" do
+      value :NONE, 0
+      value :OFFICE, 1
+      value :BUSINESS, 2
+      value :MAILING, 3
+      value :LEGAL_ADDRESS, 4
     end
   end
 end
@@ -21,5 +29,6 @@ end
 module Primary
   module Connect
     Address = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Address").msgclass
+    Address::AddressType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Address.AddressType").enummodule
   end
 end

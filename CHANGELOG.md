@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.10.0
+
+- Add `address_type` to `Address` proto
+
 ## 0.9.0
 
 - Update enums at index 0 to be an `unknown` type value
