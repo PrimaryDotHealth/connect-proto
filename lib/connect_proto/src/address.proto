@@ -2,6 +2,14 @@ syntax = "proto3";
 package primary.connect;
 
 message Address {
+  enum AddressType {
+    NONE = 0;
+    OFFICE = 1;
+    BUSINESS = 2;
+    MAILING = 3;
+    LEGAL_ADDRESS = 4;
+  }
+
   string street_address_1 = 1;
   string street_address_2 = 2;
   string city = 3;
@@ -10,4 +18,5 @@ message Address {
   string county = 6;
   string country_code = 7;
   string time_zone = 8;
+  AddressType address_type = 9;
 }
