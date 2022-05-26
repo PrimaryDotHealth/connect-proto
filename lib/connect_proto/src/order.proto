@@ -105,7 +105,7 @@ message Order {
     ResponseFlag response_flag = 19; // Specificity of the response requested from the receiving system
     repeated Identifier external_ids = 20; // May contain any number of ids related to this order
     repeated Result results = 21; // If this order already has a result, add the result here
-    google.protobuf.Timestamp initiation_date_time = 22; // Timestamp when the results collection was started.
+    google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
   }
 
   Meta meta = 1;
