@@ -1,0 +1,25 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+import "address.proto";
+import "identifier.proto";
+import "location.proto";
+
+message Device {
+  Identifier device_id = 1;
+
+  string manufacturer = 2;
+  string model_number = 3;
+  string serial_number = 4;
+
+  google.protobuf.Timestamp manufacture_date = 6;
+  google.protobuf.Timestamp expiration_date = 7;
+
+  Address address = 8;
+  Location location = 9;
+  map<string, google.protobuf.Value> config = 10;
+}

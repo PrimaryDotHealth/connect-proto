@@ -1,6 +1,8 @@
 syntax = "proto3";
 package primary.connect;
+option go_package = "primary.connect";
 
+import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 
 import "address.proto";
@@ -103,10 +105,12 @@ message Order {
     ResponseFlag response_flag = 19; // Specificity of the response requested from the receiving system
     repeated Identifier external_ids = 20; // May contain any number of ids related to this order
     repeated Result results = 21; // If this order already has a result, add the result here
+    google.protobuf.Timestamp initiation_date_time = 22; // Timestamp when the results collection was started.
   }
 
   Meta meta = 1;
   Patient patient = 2;
   Visit visit = 3;
   Order order = 4;
+  google.protobuf.Any subject = 5;
 }
