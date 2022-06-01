@@ -1,5 +1,6 @@
 syntax = "proto3";
 package primary.connect;
+option go_package = "primary.connect";
 
 message PhoneNumber {
   enum Type {
