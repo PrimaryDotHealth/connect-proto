@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.10.1
+
+- Added `Device` model and `Subject` field to `Order`
+
 ## 0.9.0
 
 - Update enums at index 0 to be an `unknown` type value
