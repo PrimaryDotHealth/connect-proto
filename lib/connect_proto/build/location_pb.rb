@@ -11,6 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :department, :string, 3
       optional :room, :string, 4
       optional :bed, :string, 5
+      optional :floor, :string, 6
     end
   end
 end

@@ -3,6 +3,7 @@
 
 require 'google/protobuf'
 
+require 'google/protobuf/any_pb'
 require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'coded_value_pb'
@@ -21,6 +22,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :patient, :message, 2, "primary.connect.Patient"
       optional :visit, :message, 3, "primary.connect.Visit"
       optional :order, :message, 4, "primary.connect.Order.Order"
+      optional :subject, :message, 5, "google.protobuf.Any"
     end
     add_message "primary.connect.Order.Order" do
       optional :id, :string, 1
@@ -44,6 +46,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :response_flag, :enum, 19, "primary.connect.Order.Order.ResponseFlag"
       repeated :external_ids, :message, 20, "primary.connect.Identifier"
       repeated :results, :message, 21, "primary.connect.Result"
+      optional :collection_start_date_time, :message, 22, "google.protobuf.Timestamp"
     end
     add_message "primary.connect.Order.Order.Facility" do
       optional :name, :string, 1
