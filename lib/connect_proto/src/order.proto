@@ -15,6 +15,7 @@ import "provider.proto";
 import "result.proto";
 import "specimen.proto";
 import "visit.proto";
+import "substances.proto";
 
 message Order {
   message Order {
@@ -112,5 +113,6 @@ message Order {
   Patient patient = 2;
   Visit visit = 3;
   Order order = 4;
-  google.protobuf.Any subject = 5;
+  Substances substances = 5;
+  google.protobuf.Any subject = 6;
 }

@@ -1,0 +1,32 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "google/protobuf/timestamp.proto";
+
+import "coded_value.proto";
+
+message Substance {
+  message Product {
+    CodedValue code = 1; // Code for the result component
+    string lot_number = 2;
+    google.protobuf.Timestamp expiration_date = 3;
+    CodedValue manufacturer = 4;
+  }
+
+  message Route {
+    CodedValue code = 1; // Code for the result component
+  }
+
+  message Site {
+    CodedValue code = 1; // Code for the result component
+  }
+
+  message Dose {
+    string quantity = 1;
+    string units = 2;
+  }
+
+  string notes = 1;
+  string refusal_reason = 2;
+}

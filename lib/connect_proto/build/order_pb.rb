@@ -15,6 +15,8 @@ require 'provider_pb'
 require 'result_pb'
 require 'specimen_pb'
 require 'visit_pb'
+require 'substances_pb'
+
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("order.proto", :syntax => :proto3) do
     add_message "primary.connect.Order" do
@@ -22,7 +24,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :patient, :message, 2, "primary.connect.Patient"
       optional :visit, :message, 3, "primary.connect.Visit"
       optional :order, :message, 4, "primary.connect.Order.Order"
-      optional :subject, :message, 5, "google.protobuf.Any"
+      optional :substances, :message, 5, "primary.connect.Substances"
+      optional :subject, :message, 6, "google.protobuf.Any"
     end
     add_message "primary.connect.Order.Order" do
       optional :id, :string, 1

@@ -1,0 +1,9 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "substance.proto";
+
+message Substances {
+  repeated Substance substances = 1; // List of result components and their values
+}

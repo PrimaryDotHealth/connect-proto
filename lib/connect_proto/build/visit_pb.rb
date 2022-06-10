@@ -12,6 +12,7 @@ require 'name_pb'
 require 'phone_number_pb'
 require 'provider_pb'
 require 'relationship_pb'
+
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("visit.proto", :syntax => :proto3) do
     add_message "primary.connect.Visit" do

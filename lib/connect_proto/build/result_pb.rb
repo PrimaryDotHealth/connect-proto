@@ -9,6 +9,7 @@ require 'coded_value_pb'
 require 'identifier_pb'
 require 'provider_pb'
 require 'specimen_pb'
+
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("result.proto", :syntax => :proto3) do
     add_message "primary.connect.Result" do
