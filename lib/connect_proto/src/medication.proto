@@ -26,7 +26,7 @@ message Medication {
   google.protobuf.Timestamp administration_date_time = 3;
   Product product = 4;
   CodedValue route = 5; // Medication administration route
-  CodedValue site = 6;  // Medication administration route
+  CodedValue site = 6;  // Medication administration site
   Dose dose = 7;
   CodedValue status = 8; // Medication prescribed status
   CodedValue form = 9; // Medication physical form
