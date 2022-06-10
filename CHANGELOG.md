@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.10.2
+
+- Added `Substance` and `Substances` models
+- Added `Substances` to `Order`
+
 ## 0.10.1
 
 - Added `Device` model and `Subject` field to `Order`

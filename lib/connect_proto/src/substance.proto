@@ -23,8 +23,9 @@ message Substance {
   }
 
   message Dose {
-    string quantity = 1; // Amount of unit dosage
-    string units = 2; // Number of units
+    string series = 1; // Dose series
+    string quantity = 2; // Unit dose amount
+    string units = 3; // Number of units
   }
 
   string notes = 1; // Substance administration notes

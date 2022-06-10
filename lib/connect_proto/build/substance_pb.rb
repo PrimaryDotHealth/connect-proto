@@ -25,8 +25,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :code, :message, 1, "primary.connect.CodedValue"
     end
     add_message "primary.connect.Substance.Dose" do
-      optional :quantity, :string, 1
-      optional :units, :string, 2
+      optional :series, :string, 1
+      optional :quantity, :string, 2
+      optional :units, :string, 3
     end
   end
 end
