@@ -20,8 +20,9 @@ message MedicationAdministration {
     CodedValue route = 2; // Medication administration route
     CodedValue method = 3;  // Medication administration method
     string dose = 4; // Amount of medication per dose
-    string series_number = 5; // Dose number administered within series_recommended
-    string series_recommended = 6; // Number of recommended doses in a prescribed series
+    string units = 5; // Medication units of measurement
+    string series_number = 6; // Dose number administered within series_recommended
+    string series_recommended = 7; // Number of recommended doses in a prescribed series
   }
 
   Identifier identifier = 1;
