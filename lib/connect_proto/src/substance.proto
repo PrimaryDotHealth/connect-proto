@@ -8,25 +8,25 @@ import "coded_value.proto";
 
 message Substance {
   message Product {
-    CodedValue code = 1; // Code for the result component
-    string lot_number = 2;
-    google.protobuf.Timestamp expiration_date = 3;
-    CodedValue manufacturer = 4;
+    CodedValue code = 1; // Code for the product component
+    string lot_number = 2; // Lot number product component
+    google.protobuf.Timestamp expiration_date = 3; // Production expiration date
+    CodedValue manufacturer = 4; // Code for the manufacturer
   }
 
   message Route {
-    CodedValue code = 1; // Code for the result component
+    CodedValue code = 1; // Code for the Route component
   }
 
   message Site {
-    CodedValue code = 1; // Code for the result component
+    CodedValue code = 1; // Code for the Site component
   }
 
   message Dose {
-    string quantity = 1;
-    string units = 2;
+    string quantity = 1; // Amount of unit dosage
+    string units = 2; // Number of units
   }
 
-  string notes = 1;
-  string refusal_reason = 2;
+  string notes = 1; // Substance administration notes
+  string refusal_reason = 2; // Reason for refusing substance
 }
