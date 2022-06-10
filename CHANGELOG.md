@@ -2,8 +2,8 @@
 
 ## 0.11.0
 
-- Added `AdministratedSubstance`
-- Added `repeated AdministratedSubstance` to `Order.Order`
+- Added `AdministeredSubstance`
+- Added `repeated AdministeredSubstance` to `Order.Order`
 
 ## 0.10.1
 

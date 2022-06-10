@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 import "coded_value.proto";
 import "identifier.proto";
 
-message AdministratedSubstance {
+message AdministeredSubstance {
   message Product {
     CodedValue code = 1; // Code for the product component
     string lot_number = 2; // Lot number product component

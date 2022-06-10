@@ -107,7 +107,7 @@ message Order {
     repeated Identifier external_ids = 20; // May contain any number of ids related to this order
     repeated Result results = 21; // If this order already has a result, add the result here
     google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
-    repeated AdministratedSubstance administrated_substances = 23; // List of administrated substances
+    repeated AdministeredSubstance administered_substances = 23; // List of administered substances
   }
 
   Meta meta = 1;
