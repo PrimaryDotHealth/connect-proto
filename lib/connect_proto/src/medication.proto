@@ -10,7 +10,7 @@ import "identifier.proto";
 message Medication {
   message Product {
     string lot_number = 2; // Lot number product component
-    google.protobuf.Timestamp expiration_date = 3; // Production expiration date
+    google.protobuf.Timestamp expiration_date = 3; // Product expiration date
     CodedValue manufacturer = 4; // Code for the manufacturer
   }
 
@@ -23,7 +23,7 @@ message Medication {
 
   Identifier identifier = 1;
   CodedValue code = 2; // Code that identifies the medication
-  google.protobuf.Timestamp administration_date_time = 3;
+  google.protobuf.Timestamp administration_date_time = 3; // Administration date of medication
   Product product = 4;
   CodedValue route = 5; // Medication administration route
   CodedValue site = 6;  // Medication administration site
