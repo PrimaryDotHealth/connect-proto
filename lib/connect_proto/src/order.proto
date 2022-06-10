@@ -15,7 +15,7 @@ import "provider.proto";
 import "result.proto";
 import "specimen.proto";
 import "visit.proto";
-import "substances.proto";
+import "administrated_substance.proto";
 
 message Order {
   message Order {
@@ -107,12 +107,12 @@ message Order {
     repeated Identifier external_ids = 20; // May contain any number of ids related to this order
     repeated Result results = 21; // If this order already has a result, add the result here
     google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
+    repeated AdministratedSubstance administrated_substances = 23; // List of administrated substances
   }
 
   Meta meta = 1;
   Patient patient = 2;
   Visit visit = 3;
   Order order = 4;
-  Substances substances = 5;
-  google.protobuf.Any subject = 6;
+  google.protobuf.Any subject = 5;
 }

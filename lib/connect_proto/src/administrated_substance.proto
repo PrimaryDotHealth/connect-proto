@@ -5,21 +5,14 @@ option go_package = "primary.connect";
 import "google/protobuf/timestamp.proto";
 
 import "coded_value.proto";
+import "identifier.proto";
 
-message Substance {
+message AdministratedSubstance {
   message Product {
     CodedValue code = 1; // Code for the product component
     string lot_number = 2; // Lot number product component
     google.protobuf.Timestamp expiration_date = 3; // Production expiration date
     CodedValue manufacturer = 4; // Code for the manufacturer
-  }
-
-  message Route {
-    CodedValue code = 1; // Code for the Route component
-  }
-
-  message Site {
-    CodedValue code = 1; // Code for the Site component
   }
 
   message Dose {
@@ -28,6 +21,12 @@ message Substance {
     string units = 3; // Number of units
   }
 
-  string notes = 1; // Substance administration notes
-  string refusal_reason = 2; // Reason for refusing substance
+  Identifier identifier = 1;
+  google.protobuf.Timestamp administration_date_time = 2;
+  Product product = 3;
+  CodedValue route = 4; // Substance administration route
+  CodedValue site = 5;  // Substance administration route
+  Dose dose = 6;
+  string notes = 7; // Substance administration notes
+  CodedValue refusal_reason = 8; // Reason for refusing substance
 }

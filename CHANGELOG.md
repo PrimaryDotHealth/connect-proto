@@ -1,9 +1,9 @@
 # Change Log
 
-## 0.10.2
+## 0.11.0
 
-- Added `Substance` and `Substances` models
-- Added `Substances` to `Order`
+- Added `AdministratedSubstance`
+- Added `repeated AdministratedSubstance` to `Order.Order`
 
 ## 0.10.1
 
