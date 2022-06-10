@@ -15,7 +15,7 @@ require 'provider_pb'
 require 'result_pb'
 require 'specimen_pb'
 require 'visit_pb'
-require 'administered_substance_pb'
+require 'medication_pb'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("order.proto", :syntax => :proto3) do
@@ -49,7 +49,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :external_ids, :message, 20, "primary.connect.Identifier"
       repeated :results, :message, 21, "primary.connect.Result"
       optional :collection_start_date_time, :message, 22, "google.protobuf.Timestamp"
-      repeated :administered_substances, :message, 23, "primary.connect.AdministeredSubstance"
+      repeated :medications, :message, 23, "primary.connect.Medication"
     end
     add_message "primary.connect.Order.Order.Facility" do
       optional :name, :string, 1
