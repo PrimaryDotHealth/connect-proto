@@ -15,7 +15,7 @@ import "provider.proto";
 import "result.proto";
 import "specimen.proto";
 import "visit.proto";
-import "administrated_substance.proto";
+import "administered_substance.proto";
 
 message Order {
   message Order {
