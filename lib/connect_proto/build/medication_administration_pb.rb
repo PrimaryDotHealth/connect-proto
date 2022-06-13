@@ -11,11 +11,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("medication_administration.proto", :syntax => :proto3) do
     add_message "primary.connect.MedicationAdministration" do
       optional :identifier, :message, 1, "primary.connect.Identifier"
-      optional :administration_date_time, :message, 2, "google.protobuf.Timestamp"
-      optional :medication, :message, 3, "primary.connect.MedicationAdministration.Medication"
-      optional :dosage, :message, 4, "primary.connect.MedicationAdministration.Dosage"
-      optional :notes, :string, 5
-      optional :refusal_reason, :message, 6, "primary.connect.CodedValue"
+      repeated :administration_codes, :message, 2, "primary.connect.CodedValue"
+      optional :administration_start_time, :message, 3, "google.protobuf.Timestamp"
+      optional :administration_end_time, :message, 4, "google.protobuf.Timestamp"
+      optional :medication, :message, 5, "primary.connect.MedicationAdministration.Medication"
+      optional :dosage, :message, 6, "primary.connect.MedicationAdministration.Dosage"
+      optional :notes, :string, 7
+      optional :refusal_reason, :message, 8, "primary.connect.CodedValue"
     end
     add_message "primary.connect.MedicationAdministration.Medication" do
       optional :code, :message, 1, "primary.connect.CodedValue"
