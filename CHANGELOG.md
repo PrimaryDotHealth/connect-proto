@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.10.2
+
+- Use `oneof` for `Subject` in `Order`  
+
 ## 0.10.1
 
 - Added `Device` model and `Subject` field to `Order`

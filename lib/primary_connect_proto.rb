@@ -3,6 +3,7 @@
 require 'address_pb'
 require 'coded_value_pb'
 require 'demographics_pb'
+require 'device_pb'
 require 'identifier_pb'
 require 'location_pb'
 require 'meta_pb'
