@@ -16,14 +16,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :administration_end_time, :message, 4, "google.protobuf.Timestamp"
       optional :medication, :message, 5, "primary.connect.MedicationAdministration.Medication"
       optional :dosage, :message, 6, "primary.connect.MedicationAdministration.Dosage"
-      optional :notes, :string, 7
-      optional :refusal_reason, :message, 8, "primary.connect.CodedValue"
+      optional :refusal_reason, :message, 7, "primary.connect.CodedValue"
+      optional :administering_provider, :message, 8, "primary.connect.MedicationAdministration.AdministeringProvider"
     end
     add_message "primary.connect.MedicationAdministration.Medication" do
-      optional :code, :message, 1, "primary.connect.CodedValue"
-      optional :lot_number, :string, 2
-      optional :expiration_date, :message, 3, "google.protobuf.Timestamp"
-      optional :manufacturer, :message, 4, "primary.connect.CodedValue"
+      optional :lot_number, :string, 1
+      optional :expiration_date, :message, 2, "google.protobuf.Timestamp"
+      optional :manufacturer, :message, 3, "primary.connect.CodedValue"
     end
     add_message "primary.connect.MedicationAdministration.Dosage" do
       optional :site, :message, 1, "primary.connect.CodedValue"
@@ -34,6 +33,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :series_number, :string, 6
       optional :series_recommended, :string, 7
     end
+    add_message "primary.connect.MedicationAdministration.AdministeringProvider" do
+      optional :first_name, :string, 1
+      optional :last_name, :string, 2
+      optional :degree, :string, 3
+    end
   end
 end
 
@@ -42,5 +46,6 @@ module Primary
     MedicationAdministration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration").msgclass
     MedicationAdministration::Medication = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration.Medication").msgclass
     MedicationAdministration::Dosage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration.Dosage").msgclass
+    MedicationAdministration::AdministeringProvider = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration.AdministeringProvider").msgclass
   end
 end

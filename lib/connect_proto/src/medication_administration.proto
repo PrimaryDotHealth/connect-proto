@@ -9,10 +9,9 @@ import "identifier.proto";
 
 message MedicationAdministration {
   message Medication { // What is administered
-    CodedValue code = 1; // Code for the medication
-    string lot_number = 2; // Lot number product component
-    google.protobuf.Timestamp expiration_date = 3; // Product expiration date
-    CodedValue manufacturer = 4; // Code for the manufacturer
+    string lot_number = 1; // Lot number product component
+    google.protobuf.Timestamp expiration_date = 2; // Product expiration date
+    CodedValue manufacturer = 3; // Code for the manufacturer
   }
 
   message Dosage { // Details of how medication is taken
@@ -25,12 +24,18 @@ message MedicationAdministration {
     string series_recommended = 7; // Number of recommended doses in a prescribed series
   }
 
+  message AdministeringProvider { // The administering providers details
+    string first_name = 1; // first name of the administering provider
+    string last_name = 2; // last name of the administering provider
+    string degree = 3; // the administering provider's degree
+  }
+
   Identifier identifier = 1;
   repeated CodedValue administration_codes = 2; // Codes for the medication administration
   google.protobuf.Timestamp administration_start_time = 3; // Administration start date of medication
   google.protobuf.Timestamp administration_end_time = 4; // Administration end date of medication
   Medication medication = 5;
   Dosage dosage = 6;
-  string notes = 7; // Medication administration notes
-  CodedValue refusal_reason = 8; // Reason for refusing medication
+  CodedValue refusal_reason = 7; // Reason for refusing medication
+  AdministeringProvider administering_provider = 8;
 }
