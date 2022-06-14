@@ -116,7 +116,7 @@ message Order {
   }
 
   Meta meta = 1;
-  Patient patient = 2;
+  Patient patient = 2; // Deprecated in favor of the subject field
   Visit visit = 3;
   Order order = 4;
   Subject subject = 5;
