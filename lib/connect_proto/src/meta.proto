@@ -44,5 +44,4 @@ message Meta {
   Transmission transmission = 7;
   string facility_code = 8;
   map<string, google.protobuf.Value> echo = 9;
-  string action_code = 10;
 }
