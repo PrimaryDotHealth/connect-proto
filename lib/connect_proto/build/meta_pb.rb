@@ -18,6 +18,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :transmission, :message, 7, "primary.connect.Meta.Transmission"
       optional :facility_code, :string, 8
       map :echo, :string, :message, 9, "google.protobuf.Value"
+      optional :action_code, :string, 10
     end
     add_message "primary.connect.Meta.Source" do
       optional :id, :string, 1

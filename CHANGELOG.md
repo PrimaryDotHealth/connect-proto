@@ -4,6 +4,7 @@
 
 - Added `MedicationAdministration`
 - Added `repeated MedicationAdministration` to `Order.Order`
+- Added `action_code` to `Order.Meta`
 
 ## 0.10.1
 
