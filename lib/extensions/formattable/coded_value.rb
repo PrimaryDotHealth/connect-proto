@@ -9,7 +9,7 @@ module ConnectProto
             value.presence,
             description.presence,
             code_set.presence
-          ].compact.join('^').squeeze(' ').strip
+          ].join('^').squeeze(' ').strip
         end
       end
     end
