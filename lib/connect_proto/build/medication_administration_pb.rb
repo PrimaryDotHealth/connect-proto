@@ -29,7 +29,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :route, :message, 2, "primary.connect.CodedValue"
       optional :method, :message, 3, "primary.connect.CodedValue"
       optional :dose, :string, 4
-      optional :units, :string, 5
+      optional :units, :message, 5, "primary.connect.CodedValue"
       optional :series_number, :string, 6
       optional :series_recommended, :string, 7
     end
