@@ -8,6 +8,7 @@ require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'identifier_pb'
 require 'location_pb'
+
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("device.proto", :syntax => :proto3) do
     add_message "primary.connect.Device" do

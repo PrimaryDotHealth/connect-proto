@@ -1,0 +1,36 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "google/protobuf/timestamp.proto";
+
+import "coded_value.proto";
+import "identifier.proto";
+import "provider.proto";
+
+message MedicationAdministration {
+  message Medication { // What is administered
+    string lot_number = 1; // Lot number product component
+    google.protobuf.Timestamp expiration_date = 2; // Product expiration date
+    CodedValue manufacturer = 3; // Code for the manufacturer
+  }
+
+  message Dosage { // Details of how medication is taken
+    CodedValue site = 1;  // Medication administration site
+    CodedValue route = 2; // Medication administration route
+    CodedValue method = 3;  // Medication administration method
+    string dose = 4; // Amount of medication per dose
+    CodedValue units = 5; // Medication units of measurement
+    string series_number = 6; // Dose number administered within series_recommended
+    string series_recommended = 7; // Number of recommended doses in a prescribed series
+  }
+
+  Identifier identifier = 1;
+  repeated CodedValue administration_codes = 2; // Codes for the medication administration
+  google.protobuf.Timestamp administration_start_time = 3; // Administration start date of medication
+  google.protobuf.Timestamp administration_end_time = 4; // Administration end date of medication
+  Medication medication = 5;
+  Dosage dosage = 6;
+  CodedValue refusal_reason = 7; // Reason for refusing medication
+  Provider administering_provider = 8;
+}

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.11.0
+
+- Added `MedicationAdministration`
+- Added `repeated MedicationAdministration` to `Order.Order`
+- Added `Formattable::CodedValue` extension
+
 ## 0.10.2
 
 - Use `oneof` for `Subject` in `Order`  
