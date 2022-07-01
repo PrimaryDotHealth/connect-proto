@@ -6,6 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 import "coded_value.proto";
 import "identifier.proto";
+import "provider.proto";
 
 message MedicationAdministration {
   message Medication { // What is administered
@@ -24,12 +25,6 @@ message MedicationAdministration {
     string series_recommended = 7; // Number of recommended doses in a prescribed series
   }
 
-  message AdministeringProvider { // The administering providers details
-    string first_name = 1; // first name of the administering provider
-    string last_name = 2; // last name of the administering provider
-    string degree = 3; // the administering provider's degree
-  }
-
   Identifier identifier = 1;
   repeated CodedValue administration_codes = 2; // Codes for the medication administration
   google.protobuf.Timestamp administration_start_time = 3; // Administration start date of medication
@@ -37,5 +32,5 @@ message MedicationAdministration {
   Medication medication = 5;
   Dosage dosage = 6;
   CodedValue refusal_reason = 7; // Reason for refusing medication
-  AdministeringProvider administering_provider = 8;
+  Provider administering_provider = 8;
 }

@@ -6,6 +6,7 @@ require 'google/protobuf'
 require 'google/protobuf/timestamp_pb'
 require 'coded_value_pb'
 require 'identifier_pb'
+require 'provider_pb'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("medication_administration.proto", :syntax => :proto3) do
@@ -17,7 +18,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :medication, :message, 5, "primary.connect.MedicationAdministration.Medication"
       optional :dosage, :message, 6, "primary.connect.MedicationAdministration.Dosage"
       optional :refusal_reason, :message, 7, "primary.connect.CodedValue"
-      optional :administering_provider, :message, 8, "primary.connect.MedicationAdministration.AdministeringProvider"
+      optional :administering_provider, :message, 8, "primary.connect.Provider"
     end
     add_message "primary.connect.MedicationAdministration.Medication" do
       optional :lot_number, :string, 1
@@ -33,11 +34,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :series_number, :string, 6
       optional :series_recommended, :string, 7
     end
-    add_message "primary.connect.MedicationAdministration.AdministeringProvider" do
-      optional :first_name, :string, 1
-      optional :last_name, :string, 2
-      optional :degree, :string, 3
-    end
   end
 end
 
@@ -46,6 +42,5 @@ module Primary
     MedicationAdministration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration").msgclass
     MedicationAdministration::Medication = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration.Medication").msgclass
     MedicationAdministration::Dosage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration.Dosage").msgclass
-    MedicationAdministration::AdministeringProvider = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.MedicationAdministration.AdministeringProvider").msgclass
   end
 end
