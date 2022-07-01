@@ -2,11 +2,11 @@ syntax = "proto3";
 package primary.connect;
 option go_package = "primary.connect";
 
-import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 
 import "address.proto";
 import "coded_value.proto";
+import "device.proto";
 import "identifier.proto";
 import "meta.proto";
 import "patient.proto";
@@ -110,9 +110,16 @@ message Order {
     repeated MedicationAdministration medication_administrations = 23; // List of medication administrations
   }
 
+  message Subject {
+    oneof subject {
+      Patient patient = 1;
+      Device device = 2;
+    };
+  }
+
   Meta meta = 1;
-  Patient patient = 2;
+  Patient patient = 2; // Deprecated in favor of the subject field
   Visit visit = 3;
   Order order = 4;
-  google.protobuf.Any subject = 5;
+  Subject subject = 5;
 }
