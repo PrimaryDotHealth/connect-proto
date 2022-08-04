@@ -14,7 +14,7 @@
 
 ## Publishing changes
 
-- Update version in `connect_proto.gemspec`
+- Update version in `connect_proto/version.rb`
 - Update `CHANGELOG.md`
 - Push to Github
 - Build gem
