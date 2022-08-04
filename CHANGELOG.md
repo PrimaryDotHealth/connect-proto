@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.12.0
+
+- Added `Order.Order.Status.STATUS_REPORTED`
+
 ## 0.11.0
 
 - Added `MedicationAdministration`
@@ -8,7 +12,7 @@
 
 ## 0.10.2
 
-- Use `oneof` for `Subject` in `Order`  
+- Use `oneof` for `Subject` in `Order`
 
 ## 0.10.1
 
