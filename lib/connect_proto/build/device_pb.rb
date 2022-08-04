@@ -4,7 +4,6 @@
 require 'google/protobuf'
 
 require 'google/protobuf/struct_pb'
-require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'identifier_pb'
 require 'location_pb'

@@ -2,10 +2,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "connect_proto/version"
 
 Gem::Specification.new do |s|
   s.name        = "primary_connect_proto"
-  s.version     = "0.11.0"
+  s.version     = ConnectProto::VERSION
   s.authors     = ["Primary.Health"]
   s.email       = ["sam@primary.health"]
 
