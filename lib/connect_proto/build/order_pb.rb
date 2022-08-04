@@ -82,6 +82,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :STATUS_CANCEL, 2
       value :STATUS_RESULTED, 3
       value :STATUS_NEW, 4
+      value :STATUS_REPORTED, 5
     end
     add_enum "primary.connect.Order.Order.Priority" do
       value :PRIORITY_UNKNOWN, 0

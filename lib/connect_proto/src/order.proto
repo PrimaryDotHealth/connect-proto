@@ -27,7 +27,7 @@ message Order {
 
     message Diagnosis {
       enum Type {
-        TYPE_UNKNOWN	 = 0;
+        TYPE_UNKNOWN = 0;
         TYPE_ADMITTING = 1;
         TYPE_FINAL = 2;
         TYPE_SELF = 3;
@@ -54,6 +54,7 @@ message Order {
       STATUS_CANCEL = 2;
       STATUS_RESULTED = 3;
       STATUS_NEW = 4;
+      STATUS_REPORTED = 5;
     }
 
     enum Priority {
