@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.12.1
+- Update `ConnectProto::Extensions::Valueable` to handle `TrueClass` and `FalseClass`
+
 ## 0.12.0
 
 - Added `Order.Order.Status.STATUS_REPORTED`
