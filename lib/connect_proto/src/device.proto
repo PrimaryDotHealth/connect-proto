@@ -3,7 +3,6 @@ package primary.connect;
 option go_package = "primary.connect";
 
 import "google/protobuf/struct.proto";
-import "google/protobuf/timestamp.proto";
 
 import "address.proto";
 import "identifier.proto";
