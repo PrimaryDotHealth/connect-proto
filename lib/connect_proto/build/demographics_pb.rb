@@ -94,6 +94,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :GENDER_TRANSGENDER_MALE, 5
       value :GENDER_TRANSGENDER_FEMALE, 6
       value :GENDER_PREFER_NOT_TO_DISCLOSE, 7
+      value :GENDER_INTERSEX, 8
     end
     add_enum "primary.connect.Demographics.SexualOrientation" do
       value :ORIENTATION_UNKNOWN, 0

@@ -1,6 +1,11 @@
 # Change Log
 
+## 0.13.0
+
+- Added `Demographics::Gender::GENDER_INTERSEX`
+
 ## 0.12.1
+
 - Update `ConnectProto::Extensions::Valueable` to handle `TrueClass` and `FalseClass`
 
 ## 0.12.0
