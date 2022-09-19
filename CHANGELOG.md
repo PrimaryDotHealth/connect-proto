@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.14.0
+
+- Added `Order.Order.accession_date_time`
+
 ## 0.13.0
 
 - Added `Demographics::Gender::GENDER_INTERSEX`
