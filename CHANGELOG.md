@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.15.0
+
+- Upgrade `protobuf` to `3.21.7`
+- Add `Patient` to `Results` proto
+
 ## 0.14.0
 
 - Added `Order.Order.accession_date_time`
