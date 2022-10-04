@@ -5,12 +5,14 @@ require 'google/protobuf'
 
 require 'meta_pb'
 require 'result_pb'
+require 'patient_pb'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("results.proto", :syntax => :proto3) do
     add_message "primary.connect.Results" do
       optional :meta, :message, 1, "primary.connect.Meta"
       repeated :results, :message, 2, "primary.connect.Result"
+      optional :patient, :message, 3, "primary.connect.Patient"
     end
   end
 end
