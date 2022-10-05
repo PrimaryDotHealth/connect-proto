@@ -6,7 +6,6 @@ import "google/protobuf/timestamp.proto";
 
 import "address.proto";
 import "coded_value.proto";
-import "device.proto";
 import "identifier.proto";
 import "meta.proto";
 import "patient.proto";
@@ -14,6 +13,7 @@ import "phone_number.proto";
 import "provider.proto";
 import "result.proto";
 import "specimen.proto";
+import "subject.proto";
 import "visit.proto";
 import "medication_administration.proto";
 
@@ -110,13 +110,6 @@ message Order {
     google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
     repeated MedicationAdministration medication_administrations = 23; // List of medication administrations
     google.protobuf.Timestamp accession_date_time = 24; // Timestamp when the specimen was received by the destination
-  }
-
-  message Subject {
-    oneof subject {
-      Patient patient = 1;
-      Device device = 2;
-    };
   }
 
   Meta meta = 1;
