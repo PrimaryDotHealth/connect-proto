@@ -1,0 +1,13 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "patient.proto";
+import "device.proto";
+
+message Subject {
+  oneof subject {
+    Patient patient = 1;
+    Device device = 2;
+  };
+}

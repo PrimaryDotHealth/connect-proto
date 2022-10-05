@@ -4,10 +4,10 @@ option go_package = "primary.connect";
 
 import "meta.proto";
 import "result.proto";
-import "patient.proto";
+import "subject.proto";
 
 message Results {
   Meta meta = 1;
   repeated Result results = 2; // List of result components and their values
-  Patient patient = 3;
+  Subject subject = 3;
 }

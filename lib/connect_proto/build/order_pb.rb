@@ -6,7 +6,6 @@ require 'google/protobuf'
 require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'coded_value_pb'
-require 'device_pb'
 require 'identifier_pb'
 require 'meta_pb'
 require 'patient_pb'
@@ -14,6 +13,7 @@ require 'phone_number_pb'
 require 'provider_pb'
 require 'result_pb'
 require 'specimen_pb'
+require 'subject_pb'
 require 'visit_pb'
 require 'medication_administration_pb'
 
@@ -24,7 +24,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :patient, :message, 2, "primary.connect.Patient"
       optional :visit, :message, 3, "primary.connect.Visit"
       optional :order, :message, 4, "primary.connect.Order.Order"
-      optional :subject, :message, 5, "primary.connect.Order.Subject"
+      optional :subject, :message, 5, "primary.connect.Subject"
     end
     add_message "primary.connect.Order.Order" do
       optional :id, :string, 1
@@ -109,12 +109,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :CONFIRMATIONS, 4
       value :ACKNOWLEDGEMENT, 5
     end
-    add_message "primary.connect.Order.Subject" do
-      oneof :subject do
-        optional :patient, :message, 1, "primary.connect.Patient"
-        optional :device, :message, 2, "primary.connect.Device"
-      end
-    end
   end
 end
 
@@ -130,6 +124,5 @@ module Primary
     Order::Order::Priority = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.Priority").enummodule
     Order::Order::ResultStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.ResultStatus").enummodule
     Order::Order::ResponseFlag = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.ResponseFlag").enummodule
-    Order::Subject = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Subject").msgclass
   end
 end

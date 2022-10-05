@@ -3,7 +3,8 @@
 ## 0.15.0
 
 - Upgrade `protobuf` to `3.21.7`
-- Add `Patient` to `Results` proto
+- Pull `Subject` proto out of `Order`
+- Add `Subject` to `Results` proto
 
 ## 0.14.0
 
