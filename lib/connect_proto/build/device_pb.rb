@@ -18,6 +18,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :address, :message, 5, "primary.connect.Address"
       optional :location, :message, 6, "primary.connect.Location"
       map :config, :string, :message, 7, "google.protobuf.Value"
+      repeated :identifiers, :message, 8, "primary.connect.Identifier"
+      optional :model_name, :string, 9
     end
   end
 end

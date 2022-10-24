@@ -6,6 +6,7 @@ require 'google/protobuf'
 require 'google/protobuf/timestamp_pb'
 require 'address_pb'
 require 'coded_value_pb'
+require 'device_pb'
 require 'identifier_pb'
 require 'provider_pb'
 require 'specimen_pb'
@@ -31,6 +32,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :observation_method, :message, 17, "primary.connect.CodedValue"
       optional :producer_order_id, :string, 18
       optional :finding_value, :message, 19, "primary.connect.CodedValue"
+      optional :resulting_device, :message, 20, "primary.connect.Device"
     end
     add_message "primary.connect.Result.Producer" do
       optional :id, :message, 1, "primary.connect.Identifier"

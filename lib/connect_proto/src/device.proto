@@ -9,7 +9,7 @@ import "identifier.proto";
 import "location.proto";
 
 message Device {
-  Identifier device_id = 1;
+  Identifier device_id = 1; // Deprecated in favor of repeated Identifiers
 
   string manufacturer = 2;
   string model_number = 3;
@@ -18,4 +18,7 @@ message Device {
   Address address = 5;
   Location location = 6;
   map<string, google.protobuf.Value> config = 7;
+
+  repeated Identifier identifiers = 8; // List of IDs and types that identify the device
+  string model_name = 9;
 }
