@@ -1,12 +1,21 @@
 # Change Log
 
-## 0.12.2
+## 0.15.0
 
 - Added `repeated Identifier` to `Device`
 - Added `model_name` to `Device`
 - Added `resulting_device` to `Result`
 
+## 0.14.0
+
+- Added `Order.Order.accession_date_time`
+
+## 0.13.0
+
+- Added `Demographics::Gender::GENDER_INTERSEX`
+
 ## 0.12.1
+
 - Update `ConnectProto::Extensions::Valueable` to handle `TrueClass` and `FalseClass`
 
 ## 0.12.0

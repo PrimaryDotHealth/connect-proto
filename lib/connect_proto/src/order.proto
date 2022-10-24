@@ -109,6 +109,7 @@ message Order {
     repeated Result results = 21; // If this order already has a result, add the result here
     google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
     repeated MedicationAdministration medication_administrations = 23; // List of medication administrations
+    google.protobuf.Timestamp accession_date_time = 24; // Timestamp when the specimen was received by the destination
   }
 
   message Subject {
