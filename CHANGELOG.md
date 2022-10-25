@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.15.0
+
+- Added `repeated Identifier` to `Device`
+- Added `model_name` to `Device`
+- Added `resulting_device` to `Result`
+
 ## 0.14.0
 
 - Added `Order.Order.accession_date_time`

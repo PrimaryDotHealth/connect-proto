@@ -6,6 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 import "address.proto";
 import "coded_value.proto";
+import "device.proto";
 import "identifier.proto";
 import "provider.proto";
 import "specimen.proto";
@@ -103,4 +104,5 @@ message Result {
   CodedValue observation_method = 17; // Method used to obtain the observation. This field is used when an observation may be obtained by different methods and the sending system wishes to indicate which method was used.
   string producer_order_id = 18;
   CodedValue finding_value = 19; // Normalized value
+  Device resulting_device = 20; // The device used to result
 }

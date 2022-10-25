@@ -11,13 +11,14 @@ require 'location_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("device.proto", :syntax => :proto3) do
     add_message "primary.connect.Device" do
-      optional :device_id, :message, 1, "primary.connect.Identifier"
+      repeated :identifiers, :message, 1, "primary.connect.Identifier"
       optional :manufacturer, :string, 2
       optional :model_number, :string, 3
       optional :serial_number, :string, 4
       optional :address, :message, 5, "primary.connect.Address"
       optional :location, :message, 6, "primary.connect.Location"
       map :config, :string, :message, 7, "google.protobuf.Value"
+      optional :model_name, :string, 8
     end
   end
 end
