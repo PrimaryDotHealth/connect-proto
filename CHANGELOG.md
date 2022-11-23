@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.16.0
+
+- Added `Measurement`
+
 ## 0.15.0
 
 - Added `repeated Identifier` to `Device`
