@@ -1,0 +1,20 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "device.proto";
+import "meta.proto";
+import "result.proto";
+
+message Measurement {
+
+  message Subject {
+    oneof subject {
+      Device device = 1;
+    };
+  }
+
+  Meta meta = 1;
+  Subject subject = 2;
+  repeated Result metrics = 3;
+}
