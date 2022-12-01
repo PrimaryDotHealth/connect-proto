@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.17.0
+
+- Added `repeated CodedValue procedures` to `Order`
+
 ## 0.16.0
 
 - Added `Measurement`
