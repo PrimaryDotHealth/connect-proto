@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    primary_connect_proto (0.8.1)
+    primary_connect_proto (0.16.0)
       google-protobuf (= 4.0.0.rc1)
 
 GEM

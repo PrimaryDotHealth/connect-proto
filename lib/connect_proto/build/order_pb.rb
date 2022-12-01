@@ -51,6 +51,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :collection_start_date_time, :message, 22, "google.protobuf.Timestamp"
       repeated :medication_administrations, :message, 23, "primary.connect.MedicationAdministration"
       optional :accession_date_time, :message, 24, "google.protobuf.Timestamp"
+      repeated :procedures, :message, 25, "primary.connect.CodedValue"
     end
     add_message "primary.connect.Order.Order.Facility" do
       optional :name, :string, 1
