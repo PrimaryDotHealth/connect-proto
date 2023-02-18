@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.19.0
+
+- Downgrade `google-protobuf` to 3.22 (4.rc got yanked)
+
 ## 0.18.0
 
 - Added `Order.Order.Status.STATUS_SHIPPED`
