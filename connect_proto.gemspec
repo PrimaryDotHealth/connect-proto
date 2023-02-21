@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "lib/connect_proto/build", "lib/extensions"]
   s.executables = []
 
-  s.add_runtime_dependency 'google-protobuf', '= 4.0.0.rc1'
+  s.add_runtime_dependency 'google-protobuf', '~> 3.22.0'
 
   s.add_development_dependency "bundler", "~> 2.2.10"
   s.add_development_dependency "rake", "~> 12.3.3"
