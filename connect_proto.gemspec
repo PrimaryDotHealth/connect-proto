@@ -16,7 +16,11 @@ Gem::Specification.new do |s|
   s.description = "Protobufs for Diagnostic Ordering and Resulting"
   s.license     = "Unlicense"
   s.required_ruby_version = ">= 2.4"
-  s.files       = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
+  s.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject do |f|
+      (f == __FILE__) || f.match(%r{\A(?:(?:test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
+    end
+  end
   s.require_paths = ["lib", "lib/connect_proto/build", "lib/extensions"]
   s.executables = []
 
