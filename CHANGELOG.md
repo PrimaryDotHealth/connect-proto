@@ -4,7 +4,7 @@
 
 - Added new message `Procedure` to `Order`
 - Added `sub_procedure` to `Procedure` message
-- Updated `Order` to use new `Procedure` message
+- Updated `Order.procedures` to use new `Procedure` message
 
 ## 0.19.0
 

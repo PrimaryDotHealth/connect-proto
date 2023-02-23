@@ -100,7 +100,7 @@ message Order {
     google.protobuf.Timestamp completion_date_time = 6; // Timestamp when the results were composed into a report and released.
     string expiration_date = 7; // YYYY-MM-DD, Date when the order becomes invalid
     Specimen specimen = 8;
-    Procedure procedure = 9; // Deprecating in favor of procedures (25)
+    CodedValue procedure = 9; // Deprecating in favor of procedures (25)
     Provider ordering_provider = 10;
     repeated Provider result_copy_providers = 11; // Array of providers to be copied on the results
     Facility ordering_facility = 12; // Facility this order was placed in

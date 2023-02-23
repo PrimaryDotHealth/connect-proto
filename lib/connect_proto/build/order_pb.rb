@@ -35,7 +35,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :completion_date_time, :message, 6, "google.protobuf.Timestamp"
       optional :expiration_date, :string, 7
       optional :specimen, :message, 8, "primary.connect.Specimen"
-      optional :procedure, :message, 9, "primary.connect.Order.Order.Procedure"
+      optional :procedure, :message, 9, "primary.connect.CodedValue"
       optional :ordering_provider, :message, 10, "primary.connect.Provider"
       repeated :result_copy_providers, :message, 11, "primary.connect.Provider"
       optional :ordering_facility, :message, 12, "primary.connect.Order.Order.Facility"
