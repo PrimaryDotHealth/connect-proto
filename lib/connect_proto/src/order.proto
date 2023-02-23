@@ -48,6 +48,11 @@ message Order {
       repeated string notes = 5; // Notes related to the clinical info
     }
 
+    message Procedure {
+      CodedValue code = 1;
+      repeated CodedValue sub_procedures = 2;
+    }
+
     enum Status {
       STATUS_UNKNOWN = 0;
       STATUS_UPDATE = 1;
@@ -95,7 +100,7 @@ message Order {
     google.protobuf.Timestamp completion_date_time = 6; // Timestamp when the results were composed into a report and released.
     string expiration_date = 7; // YYYY-MM-DD, Date when the order becomes invalid
     Specimen specimen = 8;
-    CodedValue procedure = 9; // Deprecating in favor of procedures (25)
+    Procedure procedure = 9; // Deprecating in favor of procedures (25)
     Provider ordering_provider = 10;
     repeated Provider result_copy_providers = 11; // Array of providers to be copied on the results
     Facility ordering_facility = 12; // Facility this order was placed in
@@ -111,7 +116,7 @@ message Order {
     google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
     repeated MedicationAdministration medication_administrations = 23; // List of medication administrations
     google.protobuf.Timestamp accession_date_time = 24; // Timestamp when the specimen was received by the destination
-    repeated CodedValue procedures = 25; // Procedures that were ordered
+    repeated Procedure procedures = 25; // Procedures that were ordered
   }
 
   message Subject {

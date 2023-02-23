@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.20.0
+
+- Added new message `Procedure` to `Order`
+- Added `sub_procedure` to `Procedure` message
+- Updated `Order` to use new `Procedure` message
+
 ## 0.19.0
 
 - Downgrade `google-protobuf` to 3.22 (4.rc got yanked)

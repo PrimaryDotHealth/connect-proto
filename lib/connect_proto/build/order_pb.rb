@@ -35,7 +35,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :completion_date_time, :message, 6, "google.protobuf.Timestamp"
       optional :expiration_date, :string, 7
       optional :specimen, :message, 8, "primary.connect.Specimen"
-      optional :procedure, :message, 9, "primary.connect.CodedValue"
+      optional :procedure, :message, 9, "primary.connect.Order.Order.Procedure"
       optional :ordering_provider, :message, 10, "primary.connect.Provider"
       repeated :result_copy_providers, :message, 11, "primary.connect.Provider"
       optional :ordering_facility, :message, 12, "primary.connect.Order.Order.Facility"
@@ -51,7 +51,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :collection_start_date_time, :message, 22, "google.protobuf.Timestamp"
       repeated :medication_administrations, :message, 23, "primary.connect.MedicationAdministration"
       optional :accession_date_time, :message, 24, "google.protobuf.Timestamp"
-      repeated :procedures, :message, 25, "primary.connect.CodedValue"
+      repeated :procedures, :message, 25, "primary.connect.Order.Order.Procedure"
     end
     add_message "primary.connect.Order.Order.Facility" do
       optional :name, :string, 1
@@ -77,6 +77,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :units, :string, 3
       optional :abbreviation, :string, 4
       repeated :notes, :string, 5
+    end
+    add_message "primary.connect.Order.Order.Procedure" do
+      optional :code, :message, 1, "primary.connect.CodedValue"
+      repeated :sub_procedures, :message, 2, "primary.connect.CodedValue"
     end
     add_enum "primary.connect.Order.Order.Status" do
       value :STATUS_UNKNOWN, 0
@@ -128,6 +132,7 @@ module Primary
     Order::Order::Diagnosis = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.Diagnosis").msgclass
     Order::Order::Diagnosis::Type = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.Diagnosis.Type").enummodule
     Order::Order::ClinicalInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.ClinicalInfo").msgclass
+    Order::Order::Procedure = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.Procedure").msgclass
     Order::Order::Status = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.Status").enummodule
     Order::Order::Priority = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.Priority").enummodule
     Order::Order::ResultStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Order.Order.ResultStatus").enummodule
