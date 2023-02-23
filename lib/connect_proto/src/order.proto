@@ -48,6 +48,11 @@ message Order {
       repeated string notes = 5; // Notes related to the clinical info
     }
 
+    message Procedure {
+      CodedValue code = 1;
+      repeated CodedValue sub_procedures = 2;
+    }
+
     enum Status {
       STATUS_UNKNOWN = 0;
       STATUS_UPDATE = 1;
@@ -111,7 +116,7 @@ message Order {
     google.protobuf.Timestamp collection_start_date_time = 22; // Timestamp when the results collection was started.
     repeated MedicationAdministration medication_administrations = 23; // List of medication administrations
     google.protobuf.Timestamp accession_date_time = 24; // Timestamp when the specimen was received by the destination
-    repeated CodedValue procedures = 25; // Procedures that were ordered
+    repeated Procedure procedures = 25; // Procedures that were ordered
   }
 
   message Subject {
