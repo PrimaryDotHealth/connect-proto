@@ -33,6 +33,7 @@ message Meta {
     string id = 1;
     string name = 2;
     map<string, google.protobuf.Value> config = 3;
+    repeated Destination redirected_destinations = 4;
   }
 
   EventType event_type = 1;

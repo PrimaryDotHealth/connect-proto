@@ -34,6 +34,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :id, :string, 1
       optional :name, :string, 2
       map :config, :string, :message, 3, "google.protobuf.Value"
+      repeated :redirected_destination, :message, 4, "primary.connect.Meta.Destination"
     end
     add_enum "primary.connect.Meta.EventType" do
       value :EVENT_TYPE_UNKNOWN, 0
