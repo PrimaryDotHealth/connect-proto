@@ -86,7 +86,7 @@ message Result {
     string url = 3;
   }
 
-  CodedValue code = 1; // Code for the result component
+  CodedValue code = 1; // Deprecating in favor of coded_value (21)
   repeated string related_group_id = 2; // ID to group separate result components
   Specimen specimen = 3;
   string value = 4; // Value of the result component. If value_type is ValueType.ENCAPSULATED_DATA this field includes the BLOB URI
@@ -105,4 +105,6 @@ message Result {
   string producer_order_id = 18;
   CodedValue finding_value = 19; // Normalized value
   Device resulting_device = 20; // The device used to result
+  CodedValue coded_value = 21; // Code for the result component
+  CodedValue procedure = 22; // Procedure of the result
 }

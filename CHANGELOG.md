@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.21.0
+
+- Added `procedure` to `Result`
+- Added `coded_value` to `Result`
+- Update `Result.code` deprecation comment
+
 ## 0.20.0
 
 - Added new message `Procedure` to `Order`

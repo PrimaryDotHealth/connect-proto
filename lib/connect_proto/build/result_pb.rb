@@ -33,6 +33,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :producer_order_id, :string, 18
       optional :finding_value, :message, 19, "primary.connect.CodedValue"
       optional :resulting_device, :message, 20, "primary.connect.Device"
+      optional :coded_value, :message, 21, "primary.connect.CodedValue"
+      optional :procedure, :message, 22, "primary.connect.CodedValue"
     end
     add_message "primary.connect.Result.Producer" do
       optional :id, :message, 1, "primary.connect.Identifier"
