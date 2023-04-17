@@ -31,7 +31,7 @@ message Visit {
     repeated PhoneNumber phone_numbers = 8;
     repeated string email_addresses = 9;
     string type = 10;
-    string relation_to_patient = 11;
+    Relationship relation_to_patient = 11;
     Employer employer = 12;
   }
 
@@ -76,7 +76,7 @@ message Visit {
 
     enum CoverageType {
       COVERAGE_TYPE_UNKNOWN = 0;
-      COVERAGE_TYPE_PATIENT	= 1;
+      COVERAGE_TYPE_PATIENT = 1;
       COVERAGE_TYPE_CLINIC = 2;
       COVERAGE_TYPE_INSURANCE = 3;
       COVERAGE_TYPE_OTHER = 4;
