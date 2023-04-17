@@ -38,7 +38,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :phone_numbers, :message, 8, "primary.connect.PhoneNumber"
       repeated :email_addresses, :string, 9
       optional :type, :string, 10
-      optional :relation_to_patient, :string, 11
+      optional :relation_to_patient, :enum, 11, "primary.connect.Relationship"
       optional :employer, :message, 12, "primary.connect.Visit.Guarantor.Employer"
     end
     add_message "primary.connect.Visit.Guarantor.Employer" do

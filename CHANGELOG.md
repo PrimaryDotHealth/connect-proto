@@ -4,6 +4,7 @@
 
 - Added `procedure` to `Result`
 - Update `Result.code` comment to clarify usage
+- Update `Visit.Guarantor.RelationToPatient` from `string` to `Relationship` (enum)
 
 ## 0.20.0
 
