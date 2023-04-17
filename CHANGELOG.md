@@ -3,8 +3,7 @@
 ## 0.21.0
 
 - Added `procedure` to `Result`
-- Added `coded_value` to `Result`
-- Update `Result.code` deprecation comment
+- Update `Result.code` comment to clarify usage
 - Update `Visit.Guarantor.RelationToPatient` from `string` to `Relationship` (enum)
 
 ## 0.20.0
