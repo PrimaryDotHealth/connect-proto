@@ -18,6 +18,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :transmission, :message, 7, "primary.connect.Meta.Transmission"
       optional :facility_code, :string, 8
       map :echo, :string, :message, 9, "google.protobuf.Value"
+      repeated :provenances, :message, 10, "primary.connect.Meta.Provenance"
     end
     add_message "primary.connect.Meta.Source" do
       optional :id, :string, 1
@@ -34,6 +35,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :id, :string, 1
       optional :name, :string, 2
       map :config, :string, :message, 3, "google.protobuf.Value"
+    end
+    add_message "primary.connect.Meta.Provenance" do
+      optional :destination, :message, 1, "primary.connect.Meta.Destination"
+      optional :placer_id, :string, 2
+      optional :rerouted_at, :message, 3, "google.protobuf.Timestamp"
     end
     add_enum "primary.connect.Meta.EventType" do
       value :EVENT_TYPE_UNKNOWN, 0
@@ -53,6 +59,7 @@ module Primary
     Meta::Message = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Meta.Message").msgclass
     Meta::Transmission = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Meta.Transmission").msgclass
     Meta::Destination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Meta.Destination").msgclass
+    Meta::Provenance = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Meta.Provenance").msgclass
     Meta::EventType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("primary.connect.Meta.EventType").enummodule
   end
 end

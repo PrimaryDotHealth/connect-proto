@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.22.0
+
+- Added `Meta.Provenances[]`
+
 ## 0.21.0
 
 - Added `procedure` to `Result`
