@@ -35,6 +35,12 @@ message Meta {
     map<string, google.protobuf.Value> config = 3;
   }
 
+  message Provenance {
+    Destination destination = 1;
+    string placer_id = 2; // ID Assigned by the destination of provenance
+    google.protobuf.Timestamp rerouted_at = 3;
+  }
+
   EventType event_type = 1;
   google.protobuf.Timestamp event_date_and_time = 2;
   bool test = 3;
@@ -44,4 +50,5 @@ message Meta {
   Transmission transmission = 7;
   string facility_code = 8;
   map<string, google.protobuf.Value> echo = 9;
+  repeated Provenance provenances = 10;
 }
