@@ -5,6 +5,8 @@ option go_package = "primary.connect";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
+import "identifier.proto";
+
 message Meta {
   enum EventType {
     EVENT_TYPE_UNKNOWN = 0;
@@ -37,7 +39,7 @@ message Meta {
 
   message Provenance {
     Destination destination = 1;
-    string placer_id = 2; // ID Assigned by the destination of provenance
+    repeated Identifier identifiers = 2; // Any identifiers associated to the original entity
     google.protobuf.Timestamp rerouted_at = 3;
   }
 
