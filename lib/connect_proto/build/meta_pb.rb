@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
+require 'identifier_pb'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("meta.proto", :syntax => :proto3) do
@@ -38,7 +39,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "primary.connect.Meta.Provenance" do
       optional :destination, :message, 1, "primary.connect.Meta.Destination"
-      optional :placer_id, :string, 2
+      repeated :identifiers, :message, 2, "primary.connect.Identifier"
       optional :rerouted_at, :message, 3, "google.protobuf.Timestamp"
     end
     add_enum "primary.connect.Meta.EventType" do

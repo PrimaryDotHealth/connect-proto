@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.23.0
+
+- Replaced `Meta.Provenances[].placer_id` with `identifiers[]`
+
 ## 0.22.0
 
 - Added `Meta.Provenances[]`
