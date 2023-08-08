@@ -117,6 +117,7 @@ message Order {
     repeated MedicationAdministration medication_administrations = 23; // List of medication administrations
     google.protobuf.Timestamp accession_date_time = 24; // Timestamp when the specimen was received by the destination
     repeated Procedure procedures = 25; // Procedures that were ordered
+    google.protobuf.Timestamp shipped_date_time = 26; // Timestamp when the order was shipped
   }
 
   message Subject {

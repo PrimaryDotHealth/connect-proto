@@ -8,7 +8,7 @@
 ## Compile
 
 - `brew install protobuf`
-  - NOTE: If you already have protobuf installed or plan to install using a different method, please ensure you install version 3.21.x
+  - NOTE: If you already have protobuf installed or plan to install using a different method, please ensure you install version 3.23.x
 - `rake`
 - Or `rake build:watch`
 

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.23.0
+
+- Added `shipped_date_time` to `Order`
+
 ## 0.22.0
 
 - Added `Meta.Provenances[]`
