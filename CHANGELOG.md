@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.23.0
+
+-- Update `Demographics.RaceDetail` enum with more options
+
 ## 0.22.0
 
 - Added `Meta.Provenances[]`
