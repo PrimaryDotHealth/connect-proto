@@ -106,4 +106,5 @@ message Result {
   CodedValue finding_value = 19; // Normalized value
   Device resulting_device = 20; // The device used to result
   CodedValue procedure = 21; // Procedure of the result
+  bool suppress = 22; // Suppress result delivery to provider/patient
 }
