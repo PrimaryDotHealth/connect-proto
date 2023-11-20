@@ -1,8 +1,13 @@
 # Change Log
 
+## 0.24.0
+
+- Added `Result.suppress`
+
 ## 0.23.0
 
--- Update `Demographics.RaceDetail` enum with more options
+- Update `Demographics.RaceDetail` enum with more options
+
 
 ## 0.22.0
 
