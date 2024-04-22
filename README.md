@@ -7,8 +7,28 @@
 
 ## Compile
 
-- `brew install protobuf`
-  - NOTE: If you already have protobuf installed or plan to install using a different method, please ensure you install version 3.21.x
+- `brew install protobuf@21`
+  - That should install version 3.21.x
+ 
+Make sure you also add the above lines on your `~/.bashrc` or `~/.zshrc`
+
+```bash
+export PATH="/opt/homebrew/opt/protobuf@21/bin:$PATH"
+
+# For compilers to find protobuf@21 you may need to set:
+export LDFLAGS="-L/opt/homebrew/opt/protobuf@21/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/protobuf@21/include"
+
+# For pkg-config to find protobuf@21 you may need to set:
+export PKG_CONFIG_PATH="/opt/homebrew/opt/protobuf@21/lib/pkgconfig"
+```
+
+- Eval the shell so it picks up changes with `. ~/.zshrc` or restart your terminal
+
+- Check that `protoc --version` outputs **libprotoc 3.21.12**
+
+Then, run:
+
 - `rake`
 - Or `rake build:watch`
 
