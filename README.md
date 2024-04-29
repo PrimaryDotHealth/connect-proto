@@ -7,21 +7,18 @@
 
 ## Compile
 
-- `brew install protobuf@21`
-  - That should install version 3.21.x
- 
-Make sure you also add the above lines on your `~/.bashrc` or `~/.zshrc`
+Install [version `24`](https://github.com/protocolbuffers/protobuf/releases/tag/v24.4) of Protobuffers .
 
 ```bash
-export PATH="/opt/homebrew/opt/protobuf@21/bin:$PATH"
+PROTOC_VERSION=24.4
+PROTOC_ZIP=protoc-${PROTOC_VERSION}-osx-x86_64.zip
 
-# For compilers to find protobuf@21 you may need to set:
-export LDFLAGS="-L/opt/homebrew/opt/protobuf@21/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/protobuf@21/include"
-
-# For pkg-config to find protobuf@21 you may need to set:
-export PKG_CONFIG_PATH="/opt/homebrew/opt/protobuf@21/lib/pkgconfig"
+curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/$PROTOC_ZIP
+sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+rm -f $PROTOC_ZIP
 ```
+[_ref_](https://google.github.io/proto-lens/installing-protoc.html)
 
 - Eval the shell so it picks up changes with `. ~/.zshrc` or restart your terminal
 
