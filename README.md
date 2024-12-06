@@ -26,8 +26,8 @@ rm -f $PROTOC_ZIP
 
 Then, run:
 
-- `rake`
-- Or `rake build:watch`
+- `bundle exec rake`
+- Or `bundle exec rake build:watch`
 
 ## Publishing changes
 
