@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.25.0
+
+- Update `google-protobuf` to 3.25.5 (security update) 
+
 ## 0.24.0
 
 - Added `Result.suppress`
