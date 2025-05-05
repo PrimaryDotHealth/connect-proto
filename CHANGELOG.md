@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.27.0
+
+- Update `Result.abnormal_flag` enum to include all values from HL7 table 0078
+
 ## 0.26.0
 
 - Update `Order.procedure` to include alternate fields

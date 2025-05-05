@@ -52,6 +52,12 @@ message Result {
     INCONCLUSIVE = 15;
     VERY_ABNORMAL = 16;
     NORMAL = 17;
+    ABOVE_ABSOLUTE_HIGH = 18;
+    BELOW_ABSOLUTE_LOW = 19;
+    BETTER = 20;
+    SIGNIFICANT_CHANGE_DOWN = 21;
+    SIGNIFICANT_CHANGE_UP = 22;
+    WORSE = 23;
   }
 
   enum Status {
