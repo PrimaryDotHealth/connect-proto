@@ -22,7 +22,7 @@ rm -f $PROTOC_ZIP
 
 - Eval the shell so it picks up changes with `. ~/.zshrc` or restart your terminal
 
-- Check that `protoc --version` outputs **libprotoc 3.21.12**
+- Check that `protoc --version` outputs **libprotoc 25.7**
 
 Then, run:
 
