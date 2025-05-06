@@ -7,10 +7,10 @@
 
 ## Compile
 
-Install [version `24`](https://github.com/protocolbuffers/protobuf/releases/tag/v24.4) of Protobuffers .
+Install [version `25`](https://github.com/protocolbuffers/protobuf/releases/tag/v25.7) of Protobuffers .
 
 ```bash
-PROTOC_VERSION=24.4
+PROTOC_VERSION=25.7
 PROTOC_ZIP=protoc-${PROTOC_VERSION}-osx-x86_64.zip
 
 curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/$PROTOC_ZIP
