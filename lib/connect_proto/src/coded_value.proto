@@ -11,5 +11,5 @@ message CodedValue {
   string alt_description = 6;
   string code_set_version = 7;
   string alt_code_set_version = 8;
-  string original_text = 9:
+  string original_text = 9;
 }

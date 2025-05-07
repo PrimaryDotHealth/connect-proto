@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.28.0
+
+- Updated `google-protobof` from `25.5` (3.25.5) to `25.7` (3.25.7)
+
 ## 0.27.0
 
 - Update `Result.abnormal_flag` enum to include all values from HL7 table 0078

@@ -7,10 +7,10 @@
 
 ## Compile
 
-Install [version `24`](https://github.com/protocolbuffers/protobuf/releases/tag/v24.4) of Protobuffers .
+Install [version `25`](https://github.com/protocolbuffers/protobuf/releases/tag/v25.7) of Protobuffers .
 
 ```bash
-PROTOC_VERSION=24.4
+PROTOC_VERSION=25.7
 PROTOC_ZIP=protoc-${PROTOC_VERSION}-osx-x86_64.zip
 
 curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/$PROTOC_ZIP
@@ -22,7 +22,7 @@ rm -f $PROTOC_ZIP
 
 - Eval the shell so it picks up changes with `. ~/.zshrc` or restart your terminal
 
-- Check that `protoc --version` outputs **libprotoc 3.21.12**
+- Check that `protoc --version` outputs **libprotoc 25.7**
 
 Then, run:
 
