@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.28.1
+
+- Fix outdated `result_pb` due to building issues 
+
 ## 0.28.0
 
 - Updated `google-protobof` from `25.5` (3.25.5) to `25.7` (3.25.7)
