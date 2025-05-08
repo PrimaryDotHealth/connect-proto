@@ -1,8 +1,12 @@
 # Change Log
 
+## 0.29.0
+
+- Fix missing `CodeValue` alt types
+
 ## 0.28.1
 
-- Fix outdated `result_pb` due to building issues 
+- Fix outdated `result_pb` due to building issues
 
 ## 0.28.0
 
