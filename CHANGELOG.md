@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.30.1
+
+-- Remove all references of `'formattable/coded_value'`
+
 ## 0.30.0
 
 -- Remove `Extensions::Formattable::CodedValue` module
