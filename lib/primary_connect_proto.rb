@@ -22,10 +22,8 @@ require 'visit_pb'
 require 'full_nameable'
 require 'phone_numberable'
 require 'valueable'
-require 'formattable/coded_value'
 
 Primary::Connect::Name.include(ConnectProto::Extensions::FullNameable)
-Primary::Connect::CodedValue.include(ConnectProto::Extensions::Formattable::CodedValue)
 [
   Primary::Connect::Provider,
   Primary::Connect::Demographics,
