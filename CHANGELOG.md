@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.31.0
+
+-- Add new `STATUS_NOT_REPORTED` to `order.status` enum
+
 ## 0.30.1
 
 -- Remove all references of `'formattable/coded_value'`

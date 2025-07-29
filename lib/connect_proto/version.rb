@@ -1,3 +1,3 @@
 module ConnectProto
-  VERSION = '0.30.1'.freeze
+  VERSION = '0.31.0'.freeze
 end
