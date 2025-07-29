@@ -61,6 +61,7 @@ message Order {
       STATUS_NEW = 4;
       STATUS_REPORTED = 5;
       STATUS_SHIPPED = 6;
+      STATUS_NOT_REPORTED = 7;
     }
 
     enum Priority {
