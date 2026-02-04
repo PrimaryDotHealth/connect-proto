@@ -12,33 +12,8 @@ require 'provider_pb'
 
 descriptor_data = "\n\x1fmedication_administration.proto\x12\x0fprimary.connect\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x11\x63oded_value.proto\x1a\x10identifier.proto\x1a\x0eprovider.proto\"\x85\x07\n\x18MedicationAdministration\x12/\n\nidentifier\x18\x01 \x01(\x0b\x32\x1b.primary.connect.Identifier\x12\x39\n\x14\x61\x64ministration_codes\x18\x02 \x03(\x0b\x32\x1b.primary.connect.CodedValue\x12=\n\x19\x61\x64ministration_start_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x17\x61\x64ministration_end_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12H\n\nmedication\x18\x05 \x01(\x0b\x32\x34.primary.connect.MedicationAdministration.Medication\x12@\n\x06\x64osage\x18\x06 \x01(\x0b\x32\x30.primary.connect.MedicationAdministration.Dosage\x12\x33\n\x0erefusal_reason\x18\x07 \x01(\x0b\x32\x1b.primary.connect.CodedValue\x12\x39\n\x16\x61\x64ministering_provider\x18\x08 \x01(\x0b\x32\x19.primary.connect.Provider\x1a\x88\x01\n\nMedication\x12\x12\n\nlot_number\x18\x01 \x01(\t\x12\x33\n\x0f\x65xpiration_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x0cmanufacturer\x18\x03 \x01(\x0b\x32\x1b.primary.connect.CodedValue\x1a\xf9\x01\n\x06\x44osage\x12)\n\x04site\x18\x01 \x01(\x0b\x32\x1b.primary.connect.CodedValue\x12*\n\x05route\x18\x02 \x01(\x0b\x32\x1b.primary.connect.CodedValue\x12+\n\x06method\x18\x03 \x01(\x0b\x32\x1b.primary.connect.CodedValue\x12\x0c\n\x04\x64ose\x18\x04 \x01(\t\x12*\n\x05units\x18\x05 \x01(\x0b\x32\x1b.primary.connect.CodedValue\x12\x15\n\rseries_number\x18\x06 \x01(\t\x12\x1a\n\x12series_recommended\x18\x07 \x01(\tB\x11Z\x0fprimary.connectb\x06proto3"
 
-pool = Google::Protobuf::DescriptorPool.generated_pool
-
-begin
-  pool.add_serialized_file(descriptor_data)
-rescue TypeError
-  # Compatibility code: will be removed in the next major version.
-  require 'google/protobuf/descriptor_pb'
-  parsed = Google::Protobuf::FileDescriptorProto.decode(descriptor_data)
-  parsed.clear_dependency
-  serialized = parsed.class.encode(parsed)
-  file = pool.add_serialized_file(serialized)
-  warn "Warning: Protobuf detected an import path issue while loading generated file #{__FILE__}"
-  imports = [
-    ["primary.connect.Identifier", "identifier.proto"],
-    ["primary.connect.CodedValue", "coded_value.proto"],
-    ["google.protobuf.Timestamp", "google/protobuf/timestamp.proto"],
-    ["primary.connect.Provider", "provider.proto"],
-  ]
-  imports.each do |type_name, expected_filename|
-    import_file = pool.lookup(type_name).file_descriptor
-    if import_file.name != expected_filename
-      warn "- #{file.name} imports #{expected_filename}, but that import was loaded as #{import_file.name}"
-    end
-  end
-  warn "Each proto file must use a consistent fully-qualified name."
-  warn "This will become an error in the next major version."
-end
+pool = ::Google::Protobuf::DescriptorPool.generated_pool
+pool.add_serialized_file(descriptor_data)
 
 module Primary
   module Connect

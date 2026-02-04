@@ -10,31 +10,8 @@ require 'google/protobuf/timestamp_pb'
 
 descriptor_data = "\n\nmeta.proto\x12\x0fprimary.connect\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd7\x08\n\x04Meta\x12\x33\n\nevent_type\x18\x01 \x01(\x0e\x32\x1f.primary.connect.Meta.EventType\x12\x37\n\x13\x65vent_date_and_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04test\x18\x03 \x01(\x08\x12,\n\x06source\x18\x04 \x01(\x0b\x32\x1c.primary.connect.Meta.Source\x12\x37\n\x0c\x64\x65stinations\x18\x05 \x03(\x0b\x32!.primary.connect.Meta.Destination\x12.\n\x07message\x18\x06 \x01(\x0b\x32\x1d.primary.connect.Meta.Message\x12\x38\n\x0ctransmission\x18\x07 \x01(\x0b\x32\".primary.connect.Meta.Transmission\x12\x15\n\rfacility_code\x18\x08 \x01(\t\x12-\n\x04\x65\x63ho\x18\t \x03(\x0b\x32\x1f.primary.connect.Meta.EchoEntry\x12\x35\n\x0bprovenances\x18\n \x03(\x0b\x32 .primary.connect.Meta.Provenance\x1a\"\n\x06Source\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1a\'\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08order_id\x18\x02 \x01(\t\x1a\x1a\n\x0cTransmission\x12\n\n\x02id\x18\x01 \x01(\t\x1a\xad\x01\n\x0b\x44\x65stination\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12=\n\x06\x63onfig\x18\x03 \x03(\x0b\x32-.primary.connect.Meta.Destination.ConfigEntry\x1a\x45\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1a\x88\x01\n\nProvenance\x12\x36\n\x0b\x64\x65stination\x18\x01 \x01(\x0b\x32!.primary.connect.Meta.Destination\x12\x11\n\tplacer_id\x18\x02 \x01(\t\x12/\n\x0brerouted_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x43\n\tEchoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\"\x9b\x01\n\tEventType\x12\x16\n\x12\x45VENT_TYPE_UNKNOWN\x10\x00\x12\x1e\n\x1a\x45VENT_TYPE_NEW_UNSOLICITED\x10\x01\x12\x15\n\x11\x45VENT_TYPE_UPDATE\x10\x02\x12\x15\n\x11\x45VENT_TYPE_CANCEL\x10\x03\x12\x14\n\x10\x45VENT_TYPE_QUERY\x10\x04\x12\x12\n\x0e\x45VENT_TYPE_NEW\x10\x05\x42\x11Z\x0fprimary.connectb\x06proto3"
 
-pool = Google::Protobuf::DescriptorPool.generated_pool
-
-begin
-  pool.add_serialized_file(descriptor_data)
-rescue TypeError
-  # Compatibility code: will be removed in the next major version.
-  require 'google/protobuf/descriptor_pb'
-  parsed = Google::Protobuf::FileDescriptorProto.decode(descriptor_data)
-  parsed.clear_dependency
-  serialized = parsed.class.encode(parsed)
-  file = pool.add_serialized_file(serialized)
-  warn "Warning: Protobuf detected an import path issue while loading generated file #{__FILE__}"
-  imports = [
-    ["google.protobuf.Timestamp", "google/protobuf/timestamp.proto"],
-    ["google.protobuf.Value", "google/protobuf/struct.proto"],
-  ]
-  imports.each do |type_name, expected_filename|
-    import_file = pool.lookup(type_name).file_descriptor
-    if import_file.name != expected_filename
-      warn "- #{file.name} imports #{expected_filename}, but that import was loaded as #{import_file.name}"
-    end
-  end
-  warn "Each proto file must use a consistent fully-qualified name."
-  warn "This will become an error in the next major version."
-end
+pool = ::Google::Protobuf::DescriptorPool.generated_pool
+pool.add_serialized_file(descriptor_data)
 
 module Primary
   module Connect

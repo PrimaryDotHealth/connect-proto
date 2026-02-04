@@ -62,6 +62,7 @@ message Order {
       STATUS_REPORTED = 5;
       STATUS_SHIPPED = 6;
       STATUS_NOT_REPORTED = 7;
+      STATUS_REJECTED = 8;
     }
 
     enum Priority {

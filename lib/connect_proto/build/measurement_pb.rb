@@ -11,32 +11,8 @@ require 'result_pb'
 
 descriptor_data = "\n\x11measurement.proto\x12\x0fprimary.connect\x1a\x0c\x64\x65vice.proto\x1a\nmeta.proto\x1a\x0cresult.proto\"\xd4\x01\n\x0bMeasurement\x12#\n\x04meta\x18\x01 \x01(\x0b\x32\x15.primary.connect.Meta\x12\x35\n\x07subject\x18\x02 \x01(\x0b\x32$.primary.connect.Measurement.Subject\x12(\n\x07metrics\x18\x03 \x03(\x0b\x32\x17.primary.connect.Result\x1a?\n\x07Subject\x12)\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x17.primary.connect.DeviceH\x00\x42\t\n\x07subjectB\x11Z\x0fprimary.connectb\x06proto3"
 
-pool = Google::Protobuf::DescriptorPool.generated_pool
-
-begin
-  pool.add_serialized_file(descriptor_data)
-rescue TypeError
-  # Compatibility code: will be removed in the next major version.
-  require 'google/protobuf/descriptor_pb'
-  parsed = Google::Protobuf::FileDescriptorProto.decode(descriptor_data)
-  parsed.clear_dependency
-  serialized = parsed.class.encode(parsed)
-  file = pool.add_serialized_file(serialized)
-  warn "Warning: Protobuf detected an import path issue while loading generated file #{__FILE__}"
-  imports = [
-    ["primary.connect.Meta", "meta.proto"],
-    ["primary.connect.Result", "result.proto"],
-    ["primary.connect.Device", "device.proto"],
-  ]
-  imports.each do |type_name, expected_filename|
-    import_file = pool.lookup(type_name).file_descriptor
-    if import_file.name != expected_filename
-      warn "- #{file.name} imports #{expected_filename}, but that import was loaded as #{import_file.name}"
-    end
-  end
-  warn "Each proto file must use a consistent fully-qualified name."
-  warn "This will become an error in the next major version."
-end
+pool = ::Google::Protobuf::DescriptorPool.generated_pool
+pool.add_serialized_file(descriptor_data)
 
 module Primary
   module Connect

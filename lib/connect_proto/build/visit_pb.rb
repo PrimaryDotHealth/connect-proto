@@ -17,36 +17,8 @@ require 'relationship_pb'
 
 descriptor_data = "\n\x0bvisit.proto\x12\x0fprimary.connect\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\raddress.proto\x1a\x12\x64\x65mographics.proto\x1a\x10identifier.proto\x1a\x0elocation.proto\x1a\nname.proto\x1a\x12phone_number.proto\x1a\x0eprovider.proto\x1a\x12relationship.proto\"\x8a\x13\n\x05Visit\x12\x14\n\x0cvisit_number\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\t\x12\x15\n\rpatient_class\x18\x03 \x01(\t\x12\x33\n\x0fvisit_date_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x35\n\x12\x61ttending_provider\x18\x05 \x01(\x0b\x32\x19.primary.connect.Provider\x12\x36\n\x13\x63onsulting_provider\x18\x06 \x01(\x0b\x32\x19.primary.connect.Provider\x12\x35\n\x12referring_provider\x18\x07 \x01(\x0b\x32\x19.primary.connect.Provider\x12\x33\n\tguarantor\x18\x08 \x01(\x0b\x32 .primary.connect.Visit.Guarantor\x12\x34\n\ninsurances\x18\t \x03(\x0b\x32 .primary.connect.Visit.Insurance\x12+\n\x08location\x18\n \x01(\x0b\x32\x19.primary.connect.Location\x1a\xab\x04\n\tGuarantor\x12\x0e\n\x06number\x18\x01 \x01(\t\x12#\n\x04name\x18\x02 \x01(\x0b\x32\x15.primary.connect.Name\x12\x0b\n\x03ssn\x18\x03 \x01(\t\x12\x0b\n\x03\x64ob\x18\x04 \x01(\t\x12.\n\x03sex\x18\x05 \x01(\x0e\x32!.primary.connect.Demographics.Sex\x12%\n\x06spouse\x18\x06 \x01(\x0b\x32\x15.primary.connect.Name\x12)\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x18.primary.connect.Address\x12\x33\n\rphone_numbers\x18\x08 \x03(\x0b\x32\x1c.primary.connect.PhoneNumber\x12\x17\n\x0f\x65mail_addresses\x18\t \x03(\t\x12\x0c\n\x04type\x18\n \x01(\t\x12:\n\x13relation_to_patient\x18\x0b \x01(\x0e\x32\x1d.primary.connect.Relationship\x12;\n\x08\x65mployer\x18\x0c \x01(\x0b\x32).primary.connect.Visit.Guarantor.Employer\x1ax\n\x08\x45mployer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x33\n\rphone_numbers\x18\x02 \x03(\x0b\x32\x1c.primary.connect.PhoneNumber\x12)\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x18.primary.connect.Address\x1a\x9a\x0b\n\tInsurance\x12\x33\n\x04plan\x18\x01 \x01(\x0b\x32%.primary.connect.Visit.Insurance.Plan\x12\x15\n\rmember_number\x18\x02 \x03(\t\x12\x39\n\x07\x63ompany\x18\x03 \x01(\x0b\x32(.primary.connect.Visit.Insurance.Company\x12\x14\n\x0cgroup_number\x18\x04 \x01(\t\x12\x12\n\ngroup_name\x18\x05 \x01(\t\x12\x16\n\x0e\x65\x66\x66\x65\x63tive_date\x18\x06 \x01(\t\x12\x17\n\x0f\x65xpiration_date\x18\x07 \x01(\t\x12\x15\n\rpolicy_number\x18\x08 \x01(\t\x12;\n\x08priority\x18\t \x01(\x0e\x32).primary.connect.Visit.Insurance.Priority\x12\x46\n\x0e\x61greement_type\x18\n \x01(\x0e\x32..primary.connect.Visit.Insurance.AgreementType\x12\x44\n\rcoverage_type\x18\x0b \x01(\x0e\x32-.primary.connect.Visit.Insurance.CoverageType\x12\x39\n\x07insured\x18\x0c \x01(\x0b\x32(.primary.connect.Visit.Insurance.Insured\x1aS\n\x04Plan\x12/\n\nidentifier\x18\x01 \x01(\x0b\x32\x1b.primary.connect.Identifier\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x1a\xa8\x01\n\x07\x43ompany\x12/\n\nidentifier\x18\x01 \x01(\x0b\x32\x1b.primary.connect.Identifier\x12\x0c\n\x04name\x18\x02 \x01(\t\x12)\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x18.primary.connect.Address\x12\x33\n\rphone_numbers\x18\x04 \x03(\x0b\x32\x1c.primary.connect.PhoneNumber\x1a\x8a\x02\n\x07Insured\x12\x30\n\x0bidentifiers\x18\x01 \x03(\x0b\x32\x1b.primary.connect.Identifier\x12#\n\x04name\x18\x02 \x01(\x0b\x32\x15.primary.connect.Name\x12\x0b\n\x03ssn\x18\x03 \x01(\t\x12\x33\n\x0crelationship\x18\x04 \x01(\x0e\x32\x1d.primary.connect.Relationship\x12\x0b\n\x03\x64ob\x18\x05 \x01(\t\x12.\n\x03sex\x18\x06 \x01(\x0e\x32!.primary.connect.Demographics.Sex\x12)\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x18.primary.connect.Address\"e\n\x08Priority\x12\x14\n\x10PRIORITY_UNKNOWN\x10\x00\x12\x14\n\x10PRIORITY_PRIMARY\x10\x01\x12\x16\n\x12PRIORITY_SECONDARY\x10\x02\x12\x15\n\x11PRIORITY_TERTIARY\x10\x03\"\x82\x01\n\rAgreementType\x12\x1a\n\x16\x41GREEMENT_TYPE_UNKNOWN\x10\x00\x12\x1b\n\x17\x41GREEMENT_TYPE_STANDARD\x10\x01\x12\x1a\n\x16\x41GREEMENT_TYPE_UNIFIED\x10\x02\x12\x1c\n\x18\x41GREEMENT_TYPE_MATERNITY\x10\x03\"\x94\x01\n\x0c\x43overageType\x12\x19\n\x15\x43OVERAGE_TYPE_UNKNOWN\x10\x00\x12\x19\n\x15\x43OVERAGE_TYPE_PATIENT\x10\x01\x12\x18\n\x14\x43OVERAGE_TYPE_CLINIC\x10\x02\x12\x1b\n\x17\x43OVERAGE_TYPE_INSURANCE\x10\x03\x12\x17\n\x13\x43OVERAGE_TYPE_OTHER\x10\x04\x42\x11Z\x0fprimary.connectb\x06proto3"
 
-pool = Google::Protobuf::DescriptorPool.generated_pool
-
-begin
-  pool.add_serialized_file(descriptor_data)
-rescue TypeError
-  # Compatibility code: will be removed in the next major version.
-  require 'google/protobuf/descriptor_pb'
-  parsed = Google::Protobuf::FileDescriptorProto.decode(descriptor_data)
-  parsed.clear_dependency
-  serialized = parsed.class.encode(parsed)
-  file = pool.add_serialized_file(serialized)
-  warn "Warning: Protobuf detected an import path issue while loading generated file #{__FILE__}"
-  imports = [
-    ["google.protobuf.Timestamp", "google/protobuf/timestamp.proto"],
-    ["primary.connect.Provider", "provider.proto"],
-    ["primary.connect.Location", "location.proto"],
-    ["primary.connect.Name", "name.proto"],
-    ["primary.connect.Address", "address.proto"],
-    ["primary.connect.PhoneNumber", "phone_number.proto"],
-    ["primary.connect.Identifier", "identifier.proto"],
-  ]
-  imports.each do |type_name, expected_filename|
-    import_file = pool.lookup(type_name).file_descriptor
-    if import_file.name != expected_filename
-      warn "- #{file.name} imports #{expected_filename}, but that import was loaded as #{import_file.name}"
-    end
-  end
-  warn "Each proto file must use a consistent fully-qualified name."
-  warn "This will become an error in the next major version."
-end
+pool = ::Google::Protobuf::DescriptorPool.generated_pool
+pool.add_serialized_file(descriptor_data)
 
 module Primary
   module Connect
