@@ -6,7 +6,7 @@ namespace :build do
   def compile(src_directory, path)
     print "Compiling #{path}"
     protoc_version = `protoc --version`.split(' ').last
-    raise RuntimeError, "Please use protoc 25.x" unless protoc_version =~ /25\.\d+$/
+    raise RuntimeError, "Please use protoc 33.x" unless protoc_version =~ /33\.\d+$/
 
     `protoc --proto_path=#{src_directory} --ruby_out=lib/connect_proto/build #{path}`
     puts ' - done' if $?.exitstatus.zero?
