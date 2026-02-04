@@ -1,9 +1,13 @@
 # Change Log
 
-## 0.31.0
+## 0.32.0
 
 -- Updated `google-protobof` from `25.7` (3.25.7) to `33.4` (4.33.4)
 -- Added `STATUS_REJECTED` to the order status enum
+
+## 0.31.0
+
+-- Add new `STATUS_NOT_REPORTED` to `order.status` enum
 
 ## 0.30.1
 
