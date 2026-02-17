@@ -1,0 +1,11 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "meta.proto";
+import "patient.proto";
+
+message ImmunizationQuery {
+  Meta meta = 1;
+  Patient patient = 2;
+}
