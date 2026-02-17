@@ -1,0 +1,13 @@
+syntax = "proto3";
+package primary.connect;
+option go_package = "primary.connect";
+
+import "meta.proto";
+import "patient.proto";
+import "medication_administration.proto";
+
+message ImmunizationQueryResponse {
+  Meta meta = 1;
+  Patient patient = 2;
+  repeated MedicationAdministration medication_administrations = 3; // List of medication administrations
+}

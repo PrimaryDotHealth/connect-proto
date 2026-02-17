@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.32.0
+
+- Add new `ImmunizationQuery` and `ImmunizationQueryResponse` messages
+
 ## 0.31.0
 
 -- Add new `STATUS_NOT_REPORTED` to `order.status` enum
