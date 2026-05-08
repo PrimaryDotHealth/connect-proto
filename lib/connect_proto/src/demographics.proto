@@ -89,6 +89,7 @@ message Demographics {
     GENDER_TRANSGENDER_FEMALE = 6;
     GENDER_PREFER_NOT_TO_DISCLOSE = 7;
     GENDER_INTERSEX = 8;
+    GENDER_QUESTIONING = 9;
   }
 
   enum SexualOrientation {

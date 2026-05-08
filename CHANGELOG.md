@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.33.0
+
+- Add new item `GENDER_QUESTIONING` to the `demographics.Gender` enum
+
 ## 0.32.0
 
 - Add new `ImmunizationQuery` and `ImmunizationQueryResponse` messages
