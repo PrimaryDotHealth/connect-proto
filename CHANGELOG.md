@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.34.0
+
+- Add new items `ORIENTATION_GAY` and `ORIENTATION_LESBIAN` to demographics enum and bump the google protobuf from 3.25.7 to 3.25.8
+
 ## 0.33.0
 
 - Add new item `GENDER_QUESTIONING` to the `demographics.Gender` enum
@@ -51,7 +55,6 @@
 ## 0.23.0
 
 - Update `Demographics.RaceDetail` enum with more options
-
 
 ## 0.22.0
 

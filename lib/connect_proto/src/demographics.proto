@@ -100,6 +100,8 @@ message Demographics {
     ORIENTATION_QUESTIONING = 4;
     ORIENTATION_OTHER = 5;
     ORIENTATION_PREFER_NOT_TO_DISCLOSE = 6;
+    ORIENTATION_GAY = 7;
+    ORIENTATION_LESBIAN = 8;
   }
 
   enum Ethnicity {
