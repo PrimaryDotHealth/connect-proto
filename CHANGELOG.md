@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.34.0
+
+- Add new items `ORIENTATION_GAY` and `ORIENTATION_LESBIAN` to demographics enum
+
 ## 0.33.0
 
 - Add new item `GENDER_QUESTIONING` to the `demographics.Gender` enum
