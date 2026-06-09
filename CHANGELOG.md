@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.35.0
+
+- Add new enum values `RACE_TWO_SPIRIT`, `ETHNICITY_DETAIL_INDIGENOUS_MEXICO_CENTRAL_SOUTH_AMERICA`, and `ETHNICITY_DETAIL_LATINO`
+
 ## 0.34.0
 
 - Add new items `ORIENTATION_GAY` and `ORIENTATION_LESBIAN` to demographics enum and bump the google protobuf from 3.25.7 to 3.25.8
