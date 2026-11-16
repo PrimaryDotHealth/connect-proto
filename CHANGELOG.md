@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.36.0
+
+- Add `assigning_authority` (HL7 CX-4 assigning authority namespace, HD.1, e.g. `CAA`, `NMSIIS`, `CDPHE`) to `Identifier`
+- Document that `Identifier.id_type` carries the HL7 CX-5 identifier type code (table 0203, e.g. `MR`, `SR`, `PI`) for identifiers parsed from HL7
+
 ## 0.35.0
 
 - Add new enum values `RACE_TWO_SPIRIT`, `ETHNICITY_DETAIL_INDIGENOUS_MEXICO_CENTRAL_SOUTH_AMERICA`, and `ETHNICITY_DETAIL_LATINO`

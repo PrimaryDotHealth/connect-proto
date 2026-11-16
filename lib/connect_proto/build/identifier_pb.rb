@@ -5,7 +5,7 @@
 require 'google/protobuf'
 
 
-descriptor_data = "\n\x10identifier.proto\x12\x0fprimary.connect\")\n\nIdentifier\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07id_type\x18\x02 \x01(\tB\x11Z\x0fprimary.connectb\x06proto3"
+descriptor_data = "\n\x10identifier.proto\x12\x0fprimary.connect\"F\n\nIdentifier\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07id_type\x18\x02 \x01(\t\x12\x1b\n\x13\x61ssigning_authority\x18\x03 \x01(\tB\x11Z\x0fprimary.connectb\x06proto3"
 
 pool = Google::Protobuf::DescriptorPool.generated_pool
 
