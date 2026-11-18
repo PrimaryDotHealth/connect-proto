@@ -1,5 +1,9 @@
 # Change Log
 
+## Unreleased
+
+- Document `Identifier.assigning_authority` as the whole HL7 CX-4 HD with `&`-separated sub-components (e.g. `NMSIIS`, `Primary&2.16.840.1.113883.9.271&ISO`), not only the namespace (HD.1)
+
 ## 0.36.0
 
 - Add `assigning_authority` (HL7 CX-4 assigning authority namespace, HD.1, e.g. `CAA`, `NMSIIS`, `CDPHE`) to `Identifier`
